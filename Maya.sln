@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya", "Maya\Maya.csproj", "{8493494C-BDB3-4139-AB78-FB1651B5F642}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Metadata", "Metadata", "{B995A225-DEA9-4BD6-B262-1D65442502BC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.travis.yml = .travis.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.CrashReporter", "Maya.CrashReporter\Maya.CrashReporter.csproj", "{E8659712-96BD-46ED-88A5-BB49115F43DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.CrashReporter.Test", "Maya.CrashReporter.Test\Maya.CrashReporter.Test.csproj", "{329A603D-74EA-4DCF-AFC8-E08E003066B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.MVVM", "Maya.MVVM\Maya.MVVM.csproj", "{014A99E0-8B99-4DD5-9303-B7D75E8B086D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8493494C-BDB3-4139-AB78-FB1651B5F642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8493494C-BDB3-4139-AB78-FB1651B5F642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8493494C-BDB3-4139-AB78-FB1651B5F642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8493494C-BDB3-4139-AB78-FB1651B5F642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8659712-96BD-46ED-88A5-BB49115F43DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8659712-96BD-46ED-88A5-BB49115F43DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8659712-96BD-46ED-88A5-BB49115F43DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8659712-96BD-46ED-88A5-BB49115F43DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329A603D-74EA-4DCF-AFC8-E08E003066B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329A603D-74EA-4DCF-AFC8-E08E003066B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329A603D-74EA-4DCF-AFC8-E08E003066B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329A603D-74EA-4DCF-AFC8-E08E003066B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{014A99E0-8B99-4DD5-9303-B7D75E8B086D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{014A99E0-8B99-4DD5-9303-B7D75E8B086D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{014A99E0-8B99-4DD5-9303-B7D75E8B086D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{014A99E0-8B99-4DD5-9303-B7D75E8B086D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C757C03D-A95B-48F1-AAFB-0B1073EE46BD}
+	EndGlobalSection
+EndGlobal
