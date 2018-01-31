@@ -51,10 +51,7 @@ namespace GalaSoft.MvvmLight
     ////  Description = "A base class for the ViewModel classes in the MVVM pattern.",
     ////  UrlContacts = "http://www.galasoft.ch/contact_en.html",
     ////  Email = "laurent@galasoft.ch")]
-    [SuppressMessage(
-        "Microsoft.Design",
-        "CA1012",
-        Justification = "Constructors should remain public to allow serialization.")]
+    [SuppressMessage("Microsoft.Design", "CA1012", Justification = "Constructors should remain public to allow serialization.")]
     public abstract class ViewModelBase : ObservableObject, ICleanup
     {
         private IMessenger _messengerInstance;
@@ -88,10 +85,7 @@ namespace GalaSoft.MvvmLight
         /// Gets a value indicating whether the control is in design mode
         /// (running under Blend or Visual Studio).
         /// </summary>
-        [SuppressMessage(
-            "Microsoft.Performance",
-            "CA1822:MarkMembersAsStatic",
-            Justification = "Non static member needed for data binding")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Non static member needed for data binding")]
         public bool IsInDesignMode
         {
             get
@@ -104,10 +98,7 @@ namespace GalaSoft.MvvmLight
         /// Gets a value indicating whether the control is in design mode
         /// (running in Blend or Visual Studio).
         /// </summary>
-        [SuppressMessage(
-            "Microsoft.Security",
-            "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands",
-            Justification = "The security risk here is neglectible.")]
+        [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Justification = "The security risk here is neglectible.")]
         public static bool IsInDesignModeStatic
         {
             get
@@ -180,12 +171,8 @@ namespace GalaSoft.MvvmLight
         /// <remarks>If the propertyName parameter
         /// does not correspond to an existing property on the current class, an
         /// exception is thrown in DEBUG configuration only.</remarks>
-        [SuppressMessage(
-            "Microsoft.Design", 
-            "CA1026:DefaultParametersShouldNotBeUsed"), 
-        SuppressMessage(
-            "Microsoft.Design", "CA1030:UseEventsWhereAppropriate",
-            Justification = "This cannot be an event")]
+        [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed"), 
+         SuppressMessage("Microsoft.Design", "CA1030:UseEventsWhereAppropriate", Justification = "This cannot be an event")]
         public virtual void RaisePropertyChanged<T>(
 #if CMNATTR
             [CallerMemberName] string propertyName = null, 
@@ -226,14 +213,8 @@ namespace GalaSoft.MvvmLight
         /// occurred.</param>
         /// <param name="broadcast">If true, a PropertyChangedMessage will
         /// be broadcasted. If false, only the event will be raised.</param>
-        [SuppressMessage(
-            "Microsoft.Design", 
-            "CA1030:UseEventsWhereAppropriate",
-            Justification = "This cannot be an event")]
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1006:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1030:UseEventsWhereAppropriate", Justification = "This cannot be an event")]
+        [SuppressMessage("Microsoft.Design", "CA1006:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
         public virtual void RaisePropertyChanged<T>(Expression<Func<T>> propertyExpression, T oldValue, T newValue, bool broadcast)
         {
             RaisePropertyChanged(propertyExpression);
@@ -262,14 +243,8 @@ namespace GalaSoft.MvvmLight
         /// <param name="broadcast">If true, a PropertyChangedMessage will
         /// be broadcasted. If false, only the event will be raised.</param>
         /// <returns>True if the PropertyChanged event was raised, false otherwise.</returns>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1006:DoNotNestGenericTypesInMemberSignatures",
-            Justification = "This syntax is more convenient than the alternatives."), 
-         SuppressMessage(
-            "Microsoft.Design", 
-            "CA1045:DoNotPassTypesByReference", 
-            MessageId = "1#")]
+        [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This syntax is more convenient than the alternatives."), 
+         SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", MessageId = "1#")]
         protected bool Set<T>(
             Expression<Func<T>> propertyExpression,
             ref T field,
@@ -306,13 +281,8 @@ namespace GalaSoft.MvvmLight
         /// <param name="broadcast">If true, a PropertyChangedMessage will
         /// be broadcasted. If false, only the event will be raised.</param>
         /// <returns>True if the PropertyChanged event was raised, false otherwise.</returns>
-        [SuppressMessage(
-            "Microsoft.Design", 
-            "CA1026:DefaultParametersShouldNotBeUsed"), 
-         SuppressMessage(
-            "Microsoft.Design", 
-            "CA1045:DoNotPassTypesByReference", 
-            MessageId = "1#")]
+        [SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed"), 
+         SuppressMessage("Microsoft.Design", "CA1045:DoNotPassTypesByReference", MessageId = "1#")]
         protected bool Set<T>(
             string propertyName,
             ref T field,

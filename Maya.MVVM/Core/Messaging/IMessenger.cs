@@ -173,10 +173,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// <typeparam name="TTarget">The type of recipients that will receive
         /// the message. The message won't be sent to recipients of another type.</typeparam>
         /// <param name="message">The message to send to registered recipients.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than other alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than other alternatives.")]
         void Send<TMessage, TTarget>(TMessage message);
 
         /// <summary>
@@ -211,10 +208,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// <typeparam name="TMessage">The type of messages that the recipient wants
         /// to unregister from.</typeparam>
         /// <param name="recipient">The recipient that must be unregistered.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than other alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than other alternatives.")]
         void Unregister<TMessage>(object recipient);
 
         /// <summary>
@@ -227,10 +221,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// <param name="token">The token for which the recipient must be unregistered.</param>
         /// <typeparam name="TMessage">The type of messages that the recipient wants
         /// to unregister from.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than other alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than other alternatives.")]
         void Unregister<TMessage>(object recipient, object token);
 
         /// <summary>

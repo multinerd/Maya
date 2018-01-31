@@ -40,10 +40,7 @@ namespace GalaSoft.MvvmLight.Ioc
     ////  Description = "A very simple IOC container.",
     ////  UrlContacts = "http://www.galasoft.ch/contact_en.html",
     ////  Email = "laurent@galasoft.ch")]
-    [SuppressMessage(
-        "Microsoft.Naming", 
-        "CA1704:IdentifiersShouldBeSpelledCorrectly", 
-        MessageId = "Ioc")]
+    [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Ioc")]
     public class SimpleIoc : ISimpleIoc
     {
         private readonly Dictionary<Type, ConstructorInfo> _constructorInfos
@@ -160,10 +157,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="TInterface">The interface for which instances will be resolved.</typeparam>
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004",
-            Justification = "This syntax is better than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004", Justification = "This syntax is better than the alternatives.")]
         public void Register<TInterface, TClass>()
             where TInterface : class
             where TClass : class, TInterface
@@ -179,10 +173,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
         /// <param name="createInstanceImmediately">If true, forces the creation of the default
         /// instance of the provided class.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004",
-            Justification = "This syntax is better than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004", Justification = "This syntax is better than the alternatives.")]
         public void Register<TInterface, TClass>(bool createInstanceImmediately)
             where TInterface : class
             where TClass : class, TInterface
@@ -231,10 +222,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// Registers a given type.
         /// </summary>
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004",
-            Justification = "This syntax is better than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004", Justification = "This syntax is better than the alternatives.")]
         public void Register<TClass>()
             where TClass : class
         {
@@ -248,10 +236,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
         /// <param name="createInstanceImmediately">If true, forces the creation of the default
         /// instance of the provided class.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004",
-            Justification = "This syntax is better than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004", Justification = "This syntax is better than the alternatives.")]
         public void Register<TClass>(bool createInstanceImmediately)
             where TClass : class
         {
@@ -457,10 +442,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// created instances.
         /// </summary>
         /// <typeparam name="TClass">The class that must be removed.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004",
-            Justification = "This syntax is better than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004", Justification = "This syntax is better than the alternatives.")]
         public void Unregister<TClass>()
             where TClass : class
         {
@@ -534,10 +516,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="TClass">The type of the instance to be removed.</typeparam>
         /// <param name="key">The key corresponding to the instance that must be removed.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004",
-            Justification = "This syntax is better than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004", Justification = "This syntax is better than the alternatives.")]
         public void Unregister<TClass>(string key)
             where TClass : class
         {
@@ -742,10 +721,7 @@ namespace GalaSoft.MvvmLight.Ioc
             return constructorInfos[0];
         }
 
-        [SuppressMessage(
-            "Microsoft.Naming", 
-            "CA2204:Literals should be spelled correctly", 
-            MessageId = "PreferredConstructor")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "PreferredConstructor")]
         private static ConstructorInfo GetPreferredConstructorInfo(IEnumerable<ConstructorInfo> constructorInfos, Type resolveTo)
         {
             var preferredConstructorInfo

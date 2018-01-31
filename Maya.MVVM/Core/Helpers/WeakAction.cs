@@ -161,11 +161,7 @@ namespace GalaSoft.MvvmLight.Helpers
         /// be kept as a hard reference, which might cause a memory leak. You should only set this
         /// parameter to true if the action is using closures. See
         /// http://galasoft.ch/s/mvvmweakaction. </param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1062:Validate arguments of public methods",
-            MessageId = "1",
-            Justification = "Method should fail with an exception if action is null.")]
+        [SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "1", Justification = "Method should fail with an exception if action is null.")]
         public WeakAction(object target, Action action, bool keepTargetAlive = false)
         {
 #if NETFX_CORE

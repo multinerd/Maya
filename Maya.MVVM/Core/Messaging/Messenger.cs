@@ -305,10 +305,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// <typeparam name="TTarget">The type of recipients that will receive
         /// the message. The message won't be sent to recipients of another type.</typeparam>
         /// <param name="message">The message to send to registered recipients.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than other alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than other alternatives.")]
         public virtual void Send<TMessage, TTarget>(TMessage message)
         {
             SendToTargetOrType(message, typeof(TTarget), null);
@@ -353,10 +350,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// <param name="recipient">The recipient that must be unregistered.</param>
         /// <typeparam name="TMessage">The type of messages that the recipient wants
         /// to unregister from.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than other alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than other alternatives.")]
         public virtual void Unregister<TMessage>(object recipient)
         {
             Unregister<TMessage>(recipient, null, null);
@@ -372,10 +366,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// <param name="token">The token for which the recipient must be unregistered.</param>
         /// <typeparam name="TMessage">The type of messages that the recipient wants
         /// to unregister from.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than other alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than other alternatives.")]
         public virtual void Unregister<TMessage>(object recipient, object token)
         {
             Unregister<TMessage>(recipient, token, null);
@@ -442,10 +433,7 @@ namespace GalaSoft.MvvmLight.Messaging
         /// Provides a non-static access to the static <see cref="Reset"/> method.
         /// Sets the Messenger's default (static) instance to null.
         /// </summary>
-        [SuppressMessage(
-            "Microsoft.Performance", 
-            "CA1822:MarkMembersAsStatic",
-            Justification = "Non static access is needed.")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Non static access is needed.")]
         public void ResetAll()
         {
             Reset();

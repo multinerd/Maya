@@ -30,10 +30,7 @@ namespace GalaSoft.MvvmLight.Ioc
     /// been extended with additional features.
     /// </summary>
     //// [ClassInfo(typeof(SimpleIoc))]
-    [SuppressMessage(
-        "Microsoft.Naming", 
-        "CA1704:IdentifiersShouldBeSpelledCorrectly", 
-        MessageId = "Ioc")]
+    [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Ioc")]
     public interface ISimpleIoc
 #if !NETSTANDARD1_0
         : IServiceLocator
@@ -44,10 +41,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="TClass">The class that is queried.</typeparam>
         /// <returns>True if at least on instance of the class is already created, false otherwise.</returns>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
         bool ContainsCreated<TClass>();
 
         /// <summary>
@@ -58,10 +52,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <param name="key">The key that is queried.</param>
         /// <returns>True if the instance with the given key is already registered for the given class,
         /// false otherwise.</returns>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
         bool ContainsCreated<TClass>(string key);
 
         /// <summary>
@@ -69,10 +60,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="T">The type that the method checks for.</typeparam>
         /// <returns>True if the type is registered, false otherwise.</returns>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
         bool IsRegistered<T>();
 
         /// <summary>
@@ -82,10 +70,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <typeparam name="T">The type that the method checks for.</typeparam>
         /// <param name="key">The key that the method checks for.</param>
         /// <returns>True if the type and key are registered, false otherwise.</returns>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
         bool IsRegistered<T>(string key);
 
         /// <summary>
@@ -93,13 +78,8 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="TInterface">The interface for which instances will be resolved.</typeparam>
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
-        void Register<TInterface, TClass>()
-            where TInterface : class
-            where TClass : class, TInterface;
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
+        void Register<TInterface, TClass>() where TInterface : class where TClass : class, TInterface;
 
         /// <summary>
         /// Registers a given type for a given interface with the possibility for immediate
@@ -109,24 +89,15 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
         /// <param name="createInstanceImmediately">If true, forces the creation of the default
         /// instance of the provided class.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
-        void Register<TInterface, TClass>(bool createInstanceImmediately)
-            where TInterface : class
-            where TClass : class, TInterface;
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
+        void Register<TInterface, TClass>(bool createInstanceImmediately) where TInterface : class where TClass : class, TInterface;
 
         /// <summary>
         /// Registers a given type.
         /// </summary>
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
-        void Register<TClass>() 
-            where TClass : class;
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
+        void Register<TClass>() where TClass : class;
 
         /// <summary>
         /// Registers a given type with the possibility for immediate
@@ -135,12 +106,8 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <typeparam name="TClass">The type that must be used to create instances.</typeparam>
         /// <param name="createInstanceImmediately">If true, forces the creation of the default
         /// instance of the provided class.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
-        void Register<TClass>(bool createInstanceImmediately)
-            where TClass : class;
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
+        void Register<TClass>(bool createInstanceImmediately) where TClass : class;
 
         /// <summary>
         /// Registers a given instance for a given type.
@@ -148,8 +115,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <typeparam name="TClass">The type that is being registered.</typeparam>
         /// <param name="factory">The factory method able to create the instance that
         /// must be returned when the given type is resolved.</param>
-        void Register<TClass>(Func<TClass> factory)
-            where TClass : class;
+        void Register<TClass>(Func<TClass> factory) where TClass : class;
 
         /// <summary>
         /// Registers a given instance for a given type with the possibility for immediate
@@ -160,8 +126,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// must be returned when the given type is resolved.</param>
         /// <param name="createInstanceImmediately">If true, forces the creation of the default
         /// instance of the provided class.</param>
-        void Register<TClass>(Func<TClass> factory, bool createInstanceImmediately)
-            where TClass : class;
+        void Register<TClass>(Func<TClass> factory, bool createInstanceImmediately) where TClass : class;
 
         /// <summary>
         /// Registers a given instance for a given type and a given key.
@@ -170,8 +135,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <param name="factory">The factory method able to create the instance that
         /// must be returned when the given type is resolved.</param>
         /// <param name="key">The key for which the given instance is registered.</param>
-        void Register<TClass>(Func<TClass> factory, string key)
-            where TClass : class;
+        void Register<TClass>(Func<TClass> factory, string key) where TClass : class;
 
         /// <summary>
         /// Registers a given instance for a given type and a given key with the possibility for immediate
@@ -183,11 +147,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// <param name="key">The key for which the given instance is registered.</param>
         /// <param name="createInstanceImmediately">If true, forces the creation of the default
         /// instance of the provided class.</param>
-        void Register<TClass>(
-            Func<TClass> factory,
-            string key,
-            bool createInstanceImmediately)
-            where TClass : class;
+        void Register<TClass>(Func<TClass> factory, string key, bool createInstanceImmediately) where TClass : class;
 
         /// <summary>
         /// Resets the instance in its original states. This deletes all the
@@ -200,12 +160,8 @@ namespace GalaSoft.MvvmLight.Ioc
         /// created instances.
         /// </summary>
         /// <typeparam name="TClass">The class that must be removed.</typeparam>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
-        void Unregister<TClass>() 
-            where TClass : class;
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
+        void Unregister<TClass>() where TClass : class;
 
         /// <summary>
         /// Removes the given instance from the cache. The class itself remains
@@ -213,8 +169,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="TClass">The type of the instance to be removed.</typeparam>
         /// <param name="instance">The instance that must be removed.</param>
-        void Unregister<TClass>(TClass instance) 
-            where TClass : class;
+        void Unregister<TClass>(TClass instance) where TClass : class;
 
         /// <summary>
         /// Removes the instance corresponding to the given key from the cache. The class itself remains
@@ -222,11 +177,7 @@ namespace GalaSoft.MvvmLight.Ioc
         /// </summary>
         /// <typeparam name="TClass">The type of the instance to be removed.</typeparam>
         /// <param name="key">The key corresponding to the instance that must be removed.</param>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1004:GenericMethodsShouldProvideTypeParameter",
-            Justification = "This syntax is more convenient than the alternatives.")]
-        void Unregister<TClass>(string key) 
-            where TClass : class;
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "This syntax is more convenient than the alternatives.")]
+        void Unregister<TClass>(string key) where TClass : class;
     }
 }

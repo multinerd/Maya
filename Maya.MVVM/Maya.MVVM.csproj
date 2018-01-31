@@ -75,6 +75,9 @@
     <Compile Include="Core\Messaging\PropertyChangedMessage.cs" />
     <Compile Include="Core\Messaging\PropertyChangedMessageBase.cs" />
     <Compile Include="Core\ObservableObject.cs" />
+    <Compile Include="Core\ViewModelBase.cs" />
+    <Compile Include="Core\Views\IDialogService.cs" />
+    <Compile Include="Core\Views\INavigationService.cs" />
     <Compile Include="Extra\Ioc\ISimpleIoc.cs" />
     <Compile Include="Extra\Ioc\PreferredConstructor.cs" />
     <Compile Include="Extra\Ioc\SimpleIoc.cs" />
@@ -82,15 +85,9 @@
     <Compile Include="Platform\Command\IEventArgsConverter.cs" />
     <Compile Include="Platform\Threading\DispatcherHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Threading\DispatcherHelper.cs" />
-    <Compile Include="Core\UIHelper.cs" />
-    <Compile Include="Core\ViewModelBase.cs" />
-    <Compile Include="Core\Views\IDialogService.cs" />
-    <Compile Include="Core\Views\INavigationService.cs" />
+    <Compile Include="UIHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extra\Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
