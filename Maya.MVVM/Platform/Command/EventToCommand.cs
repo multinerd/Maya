@@ -24,7 +24,7 @@ using System.Windows.Controls;
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Command
+namespace Maya.MVVM.Platform.Command
 {
     /// <summary>
     /// This <see cref="T:System.Windows.Interactivity.TriggerAction`1" /> can be

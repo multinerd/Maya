@@ -16,7 +16,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace GalaSoft.MvvmLight.Views
+namespace Maya.MVVM.Core.Views
 {
     /// <summary>
     /// An interface defining how dialogs should

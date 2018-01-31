@@ -19,7 +19,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Helpers;
+using Maya.MVVM.Core.Helpers;
 
 #if NETFX_CORE
 using System.Reflection;
@@ -30,7 +30,7 @@ using System.Reflection;
 #if PLATFORMNET45
 namespace GalaSoft.MvvmLight.CommandWpf
 #else
-namespace GalaSoft.MvvmLight.Command
+namespace Maya.MVVM.Core.Command
 #endif
 {
     /// <summary>

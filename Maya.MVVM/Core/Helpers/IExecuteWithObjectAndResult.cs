@@ -13,7 +13,7 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace Maya.MVVM.Core.Helpers
 {
     /// <summary>
     /// This interface is meant for the <see cref="WeakFunc{T}" /> class and can be 

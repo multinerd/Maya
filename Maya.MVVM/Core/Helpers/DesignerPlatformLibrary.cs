@@ -14,10 +14,8 @@
 // ****************************************************************************
 
 using System;
-using System.Linq;
-using System.Reflection;
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace Maya.MVVM.Core.Helpers
 {
     /// <summary>
     /// Helper class for platform detection.

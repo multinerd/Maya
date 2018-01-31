@@ -18,9 +18,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Input;
-
+using Maya.MVVM.Core.Helpers;
 #if !NET_FXCORE
-using GalaSoft.MvvmLight.Helpers;
+
 #endif
 
 ////using GalaSoft.Utilities.Attributes;
@@ -28,7 +28,7 @@ using GalaSoft.MvvmLight.Helpers;
 #if PLATFORMNET45
 namespace GalaSoft.MvvmLight.CommandWpf
 #else
-namespace GalaSoft.MvvmLight.Command
+namespace Maya.MVVM.Core.Command
 #endif
 {
     /// <summary>

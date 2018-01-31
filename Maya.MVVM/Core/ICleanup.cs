@@ -15,7 +15,7 @@
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight
+namespace Maya.MVVM.Core
 {
     /// <summary>
     /// Defines a common interface for classes that should be cleaned up,

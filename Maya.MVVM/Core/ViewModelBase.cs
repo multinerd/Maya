@@ -16,16 +16,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
-using GalaSoft.MvvmLight.Messaging;
-
+using Maya.MVVM.Core.Helpers;
+using Maya.MVVM.Core.Messaging;
 // ReSharper disable RedundantUsingDirective
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using GalaSoft.MvvmLight.Helpers;
 // ReSharper restore RedundantUsingDirective
 
 #if NETFX_CORE
@@ -34,13 +29,13 @@ using Windows.ApplicationModel;
 #endif
 #else
 // ReSharper disable RedundantUsingDirective
-using System.Windows;
+
 // ReSharper restore RedundantUsingDirective
 #endif
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight
+namespace Maya.MVVM.Core
 {
     /// <summary>
     /// A base class for the ViewModel classes in the MVVM pattern.

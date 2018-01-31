@@ -15,7 +15,7 @@
 
 using System.Threading.Tasks;
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace Maya.MVVM.Core.Helpers
 {
     /// <summary>
     /// Helper class used when an async method is required,

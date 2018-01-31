@@ -15,7 +15,7 @@
 
 using System.Reflection;
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace Maya.MVVM.Core.Helpers
 {
     /// <summary>
     /// Helper class for platform and feature detection.

@@ -17,7 +17,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace Maya.MVVM.Core.Helpers
 {
     /// <summary>
     /// Stores a Func&lt;T&gt; without causing a hard reference

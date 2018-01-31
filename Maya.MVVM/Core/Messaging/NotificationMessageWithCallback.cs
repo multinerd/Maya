@@ -17,7 +17,7 @@ using System;
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Messaging
+namespace Maya.MVVM.Core.Messaging
 {
     /// <summary>
     /// Provides a message class with a built-in callback. When the recipient

@@ -16,11 +16,10 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 // ReSharper disable RedundantUsingDirective
-using System.Reflection;
 
 // ReSharper restore RedundantUsingDirective
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace Maya.MVVM.Core.Helpers
 {
     /// <summary>
     /// Stores an Action without causing a hard reference

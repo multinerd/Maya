@@ -13,7 +13,7 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Views
+namespace Maya.MVVM.Core.Views
 {
     /// <summary>
     /// An interface defining how navigation between pages should

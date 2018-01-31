@@ -20,7 +20,7 @@ using System.Windows;
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Messaging
+namespace Maya.MVVM.Core.Messaging
 {
     /// <summary>
     /// Use this class to send a message requesting to display a message box with features

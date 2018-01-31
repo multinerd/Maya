@@ -15,12 +15,12 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-
-#if !NETSTANDARD1_0
 using Microsoft.Practices.ServiceLocation;
+#if !NETSTANDARD1_0
+
 #endif
 
-namespace GalaSoft.MvvmLight.Ioc
+namespace Maya.MVVM.Extra.Ioc
 {
     /// <summary>
     /// A very simple IOC container with basic functionality needed to register and resolve

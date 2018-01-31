@@ -15,7 +15,7 @@
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Messaging
+namespace Maya.MVVM.Core.Messaging
 {
     /// <summary>
     /// Passes a string message (Notification) to a recipient.

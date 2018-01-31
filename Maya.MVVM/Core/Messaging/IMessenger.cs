@@ -18,7 +18,7 @@ using System.Diagnostics.CodeAnalysis;
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Messaging
+namespace Maya.MVVM.Core.Messaging
 {
     /// <summary>
     /// The Messenger is a class allowing objects to exchange messages.

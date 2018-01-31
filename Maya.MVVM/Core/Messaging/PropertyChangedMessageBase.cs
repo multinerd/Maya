@@ -15,7 +15,7 @@
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Messaging
+namespace Maya.MVVM.Core.Messaging
 {
     /// <summary>
     /// Basis class for the <see cref="PropertyChangedMessage{T}" /> class. This

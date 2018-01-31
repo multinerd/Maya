@@ -20,12 +20,13 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-
-#if !NETSTANDARD1_0
+using Maya.MVVM.Core.Helpers;
 using Microsoft.Practices.ServiceLocation;
+#if !NETSTANDARD1_0
+
 #endif
 
-namespace GalaSoft.MvvmLight.Ioc
+namespace Maya.MVVM.Extra.Ioc
 {
     /// <summary>
     /// A very simple IOC container with basic functionality needed to register and resolve
@@ -189,7 +190,7 @@ namespace GalaSoft.MvvmLight.Ioc
                     {
 #if DEBUG
                         // Avoid some issues in the designer when the ViewModelLocator is instantiated twice
-                        if (!Helpers.DesignerLibrary.IsInDesignMode)
+                        if (!DesignerLibrary.IsInDesignMode)
                         {
 #endif
                             throw new InvalidOperationException(
@@ -259,7 +260,7 @@ namespace GalaSoft.MvvmLight.Ioc
                     {
 #if DEBUG
                         // Avoid some issues in the designer when the ViewModelLocator is instantiated twice
-                        if (!Helpers.DesignerLibrary.IsInDesignMode)
+                        if (!DesignerLibrary.IsInDesignMode)
                         {
 #endif
                             // Throw only if constructorinfos have not been
@@ -332,7 +333,7 @@ namespace GalaSoft.MvvmLight.Ioc
                 {
 #if DEBUG
                     // Avoid some issues in the designer when the ViewModelLocator is instantiated twice
-                    if (!Helpers.DesignerLibrary.IsInDesignMode)
+                    if (!DesignerLibrary.IsInDesignMode)
                     {
 #endif
                         throw new InvalidOperationException(
@@ -397,7 +398,7 @@ namespace GalaSoft.MvvmLight.Ioc
                 {
 #if DEBUG
                     // Avoid some issues in the designer when the ViewModelLocator is instantiated twice
-                    if (!Helpers.DesignerLibrary.IsInDesignMode)
+                    if (!DesignerLibrary.IsInDesignMode)
                     {
 #endif
                         throw new InvalidOperationException(

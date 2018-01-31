@@ -17,11 +17,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using GalaSoft.MvvmLight.Helpers;
-
+using System.Windows.Threading;
+using Maya.MVVM.Core.Helpers;
 // ReSharper disable RedundantUsingDirective
-using System.Reflection;
-using System.Threading;
 // ReSharper restore RedundantUsingDirective
 
 #if SILVERLIGHT
@@ -31,13 +29,13 @@ using System.Windows;
 using Windows.UI.Xaml;
 using Windows.UI.Core;
 #else
-using System.Windows.Threading;
+
 #endif
 #endif
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Messaging
+namespace Maya.MVVM.Core.Messaging
 {
     /// <summary>
     /// The Messenger is a class allowing objects to exchange messages.

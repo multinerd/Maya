@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GalaSoft.MvvmLight.Ioc
+namespace Maya.MVVM.Extra.Ioc
 {
     /// <summary>
     /// When used with the SimpleIoc container, specifies which constructor

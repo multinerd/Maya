@@ -13,7 +13,7 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Command
+namespace Maya.MVVM.Platform.Command
 {
     /// <summary>
     /// The definition of the converter used to convert an EventArgs

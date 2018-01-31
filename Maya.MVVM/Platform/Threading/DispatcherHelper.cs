@@ -15,13 +15,12 @@
 
 using System;
 using System.Text;
-
+using System.Windows.Threading;
 #if NETFX_CORE
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.Foundation;
 #else
-using System.Windows.Threading;
 
 #if SILVERLIGHT
 using System.Windows;
@@ -30,7 +29,7 @@ using System.Windows;
 
 ////using GalaSoft.Utilities.Attributes;
 
-namespace GalaSoft.MvvmLight.Threading
+namespace Maya.MVVM.Platform.Threading
 {
     /// <summary>
     /// Helper class for dispatcher operations on the UI thread.

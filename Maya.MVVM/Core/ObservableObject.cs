@@ -18,18 +18,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
-using System.Linq.Expressions;
-
-// ReSharper disable RedundantUsingDirective
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+// ReSharper disable RedundantUsingDirective
+
 // ReSharper restore RedundantUsingDirective
 
 #if CMNATTR
 using System.Runtime.CompilerServices;
 #endif
 
-namespace GalaSoft.MvvmLight
+namespace Maya.MVVM.Core
 {
     /// <summary>
     /// A base class for objects of which the properties must be observable.
