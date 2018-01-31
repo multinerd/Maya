@@ -1,0 +1,6 @@
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
+
+language: csharp
+solution: Maya.sln
