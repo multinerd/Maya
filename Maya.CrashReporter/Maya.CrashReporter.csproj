@@ -26,7 +26,8 @@
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\bin\Maya.CrashReporter\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>D:\bin\Maya.CrashReporter\Maya.CrashReporter.xml</DocumentationFile>
@@ -34,10 +35,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>1.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Multinerd2.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -97,7 +101,8 @@
     <Content Include="Resources\warning_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="1.snk" />
+    <None Include="Maya.CrashReporter.snk" />
+    <None Include="Multinerd2.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
