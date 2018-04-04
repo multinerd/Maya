@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.WPF", "Maya.WPF\Maya.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.Amazon", "Maya.Amazon\Maya.Amazon.csproj", "{9F8D4674-7C1D-49BF-B261-CD5B10667B40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.Test", "Maya.Test\Maya.Test.csproj", "{B1F20B7D-5DB8-416C-873B-19CE2B22FD45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{9F8D4674-7C1D-49BF-B261-CD5B10667B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F8D4674-7C1D-49BF-B261-CD5B10667B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F8D4674-7C1D-49BF-B261-CD5B10667B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F20B7D-5DB8-416C-873B-19CE2B22FD45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F20B7D-5DB8-416C-873B-19CE2B22FD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F20B7D-5DB8-416C-873B-19CE2B22FD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F20B7D-5DB8-416C-873B-19CE2B22FD45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

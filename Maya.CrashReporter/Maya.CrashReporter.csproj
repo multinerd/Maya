@@ -49,6 +49,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
@@ -101,7 +102,6 @@
     <Content Include="Resources\warning_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Maya.CrashReporter.snk" />
     <None Include="Multinerd2.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
