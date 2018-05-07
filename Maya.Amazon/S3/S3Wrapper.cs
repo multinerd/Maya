@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Maya.Amazon.Helpers;
+using Maya.Amazon.Models;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
-using Maya.Amazon.Helpers;
-using Maya.Amazon.Models;
 
 namespace Maya.Amazon.S3
 {
@@ -112,7 +111,7 @@ namespace Maya.Amazon.S3
                 Key = key,
                 InputStream = sourceStream,
                 CannedACL = S3CannedACL.PublicRead,
-                ContentType = MimeTypeMap.GetMimeType(Path.GetExtension(key.Split('/').Last())) 
+                ContentType = MimeTypeMap.GetMimeType(Path.GetExtension(key.Split('/').Last()))
             };
 
             await Client.PutObjectAsync(obj).ConfigureAwait(false);
