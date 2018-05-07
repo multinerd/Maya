@@ -10,7 +10,7 @@ namespace Maya.WPF
     {
         public static void WriteToLog(object appname, string message)
         {
-            Console.WriteLine($"{appname}: {message}");
+            Console.WriteLine($"\t{appname}: \n\t\t{message}");
         }
     }
 }

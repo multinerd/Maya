@@ -55,22 +55,11 @@ namespace Maya.WPF.Converters
 
         private string GetParameter(IValueConverter converter)
         {
-            if (_parameters == null)
+            if (_parameters == null || !_parameters.Any())
                 return null;
 
             var index = IndexOf(converter);
-            string parameter;
-
-            try
-            {
-                parameter = _parameters[index];
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                Log.WriteToLog(this, ex.ToString());
-                parameter = null;
-            }
-
+            var parameter = _parameters[index];
             if (parameter != null)
                 parameter = Regex.Unescape(parameter);
 

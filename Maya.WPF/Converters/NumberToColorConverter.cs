@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
 namespace Maya.WPF.Converters
 {
-    // Neg value is red, otherwise default
     /// <summary>
     /// If a number is below 0, red is returned, otherwise black is returned.
     /// </summary>
@@ -18,10 +13,12 @@ namespace Maya.WPF.Converters
         /// <inheritdoc />
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var state = (decimal?)value;
-            return state >= 0
-                ? new SolidColorBrush(Colors.Black)
-                : new SolidColorBrush(Colors.Red);
+            if (value is decimal v)
+                return v >= decimal.Zero
+                    ? new SolidColorBrush(Colors.Black)
+                    : new SolidColorBrush(Colors.Red);
+
+            return null;
         }
 
         /// <inheritdoc />
@@ -31,7 +28,6 @@ namespace Maya.WPF.Converters
         }
     }
 
-    // Neg value is red, otherwise default
     /// <summary>
     /// If a number is below 0, black is returned, otherwise red is returned.
     /// </summary>
@@ -40,10 +36,12 @@ namespace Maya.WPF.Converters
         /// <inheritdoc />
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var state = (decimal?)value;
-            return state < 0
-                ? new SolidColorBrush(Colors.Black)
-                : new SolidColorBrush(Colors.Red);
+            if (value is decimal v)
+                return v < decimal.Zero
+                    ? new SolidColorBrush(Colors.Black)
+                    : new SolidColorBrush(Colors.Red);
+
+            return null;
         }
 
         /// <inheritdoc />
