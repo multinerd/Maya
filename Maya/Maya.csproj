@@ -46,15 +46,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="System\DirectoryHelper.cs" />
+    <Compile Include="System\EnumerateDirectory.cs" />
     <Compile Include="System\EnumHelper.cs" />
     <Compile Include="Windows\Collection\AsyncObservableCollection1.cs" />
     <Compile Include="Windows\Collection\AsyncObservableCollection.cs" />
+    <Compile Include="Windows\Extensions\ApplicationExtensions.cs" />
+    <Compile Include="Windows\Extensions\Contains.cs" />
     <Compile Include="Windows\Extensions\DateTimeHelper.cs" />
     <Compile Include="Windows\Extensions\CollectionHelper.cs" />
     <Compile Include="Windows\Utilities\ConsoleHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windows\Utilities\FilePathSanitizer.cs" />
     <Compile Include="System\InstanceChecker.cs" />
+    <Compile Include="Windows\Utilities\RandomEnum.cs" />
+    <Compile Include="Windows\Utilities\TypeSwitch.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
