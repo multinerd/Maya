@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using Telerik.Windows.Controls;
 
 // https://web.archive.org/web/20160202215105/http://indepthdev.azurewebsites.net:80/2010/10/reusable-editablemodelbase-using-ieditableobject/
-namespace Multinerd.Windows.MVVM
+namespace Maya.WPF.Models
 {
-    public abstract class EditableModelBase<T> : ViewModelBase, IEditableObject
+    public abstract class EditableModelBase<T> : /*BindableBase,*/ IEditableObject
     {
         private T Cache { get; set; }
 

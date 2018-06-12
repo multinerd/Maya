@@ -35,7 +35,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Multinerd2.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>new Multinerd.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
@@ -43,6 +43,7 @@
   <ItemGroup>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Deployment" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="System\DirectoryHelper.cs" />
@@ -63,7 +64,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Multinerd2.pfx" />
+    <None Include="new Multinerd.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

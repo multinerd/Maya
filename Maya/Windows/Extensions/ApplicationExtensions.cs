@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Reflection;
 
-namespace Multinerd.Extensions
+namespace Maya.Windows.Extensions
 {
     public static class ApplicationExt
     {

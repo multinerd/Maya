@@ -2,7 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:Maya.WPF.Converters">
 
-    <converters:NumberToColorConverter x:Key="NumberToColorConverter"/>
-    <converters:InverseNumberToColorConverter x:Key="InverseNumberToColorConverter"/>
+    <converters:NumberToColorConverter x:Key="NumberToColorConverter" AccountingColors="GreenRed" />
+    <converters:NumberToColorConverter x:Key="InverseNumberToColorConverter" Inverse="True"/>
+
+    <converters:TrimTextConverter x:Key="TrimTextConverter" />
+    <converters:HumanizerConverter x:Key="HumanizerConverter" />
+
+    <converters:IntToDoubleConverter x:Key="IntToDoubleConverter"/>
 
 </ResourceDictionary>

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace Maya.WPF.Converters
@@ -70,7 +68,7 @@ namespace Maya.WPF.Converters
 
             catch (IndexOutOfRangeException ex)
             {
-                Log.WriteToLog(this, "CommandParamater is null. You can avoid this exception by passing in a delimited CommandParamater. \n\tExample: ConverterParameter=param1|NULL)");
+                Log.WriteToLog(this, "CommandParameter is null. You can avoid this warning by passing in a delimited CommandParameter. \n\tExample: ConverterParameter=param1|NULL)");
                 parameter = null;
             }
 

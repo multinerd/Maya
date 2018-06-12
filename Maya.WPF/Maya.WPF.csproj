@@ -34,11 +34,14 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Multinerd2.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>new Multinerd.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RequireThat">
+      <HintPath>..\..\..\bin\RequireThat.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
@@ -51,13 +54,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\Chaining\LinkedConverter.cs" />
-    <Compile Include="Converters\NumberToColorConverter.cs" />
-    <Compile Include="Converters\Chaining\SequentialValueConverter.cs" />
-    <Compile Include="Converters\Chaining\ValueConverterGroup.cs" />
+    <Compile Include="Converters\NumberToColorConverter\INumberToColorConverter.cs" />
+    <Compile Include="Enums\AccountingColors.cs" />
+    <Compile Include="Converters\Testing\Chaining\LinkedConverter.cs" />
+    <Compile Include="Converters\Testing\IntToDoubleConverter.cs" />
+    <Compile Include="Converters\NumberToColorConverter\NumberToColorConverter.cs" />
+    <Compile Include="Converters\Testing\Chaining\SequentialValueConverter.cs" />
+    <Compile Include="Converters\Testing\Chaining\ValueConverterGroup.cs" />
+    <Compile Include="Converters\Testing\Text\HumanizerConverter.cs" />
+    <Compile Include="Converters\Testing\Text\TrimTextConverter.cs" />
     <Compile Include="Helpers\BoolChecks.cs" />
     <Compile Include="Helpers\Ignore.cs" />
-    <Compile Include="IsInDesignMode.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Models\EditableModelBase.cs" />
     <Compile Include="Models\RadProgressBarModel.cs" />
@@ -65,7 +72,7 @@
     <Compile Include="Helpers\UIHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Multinerd2.pfx" />
+    <None Include="new Multinerd.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -79,5 +86,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
