@@ -74,6 +74,7 @@
     <Compile Include="Events\ActivityIndicatorEvents.cs" />
     <Compile Include="Events\SearchEvents.cs" />
     <Compile Include="Model\ActivityIndicatorModel.cs" />
+    <Compile Include="Extensions\ViewModelLocationProviderExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
