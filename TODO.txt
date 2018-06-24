@@ -18,3 +18,16 @@ report extension
 			
 			
 			Recreate files in TODO folder
+
+
+
+
+Maya.Core
+
+Maya.Wpf
+Maya.Wpf.CrashReporter
+	- Beautify html for email
+
+Maya.Mvc
+
+Maya.EF
