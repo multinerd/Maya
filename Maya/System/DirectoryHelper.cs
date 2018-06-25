@@ -47,6 +47,36 @@ namespace Maya.System
 
 
         /// <summary>
+        /// Get the next available name for a file. (Ex: if 'C:\MyTestFile.html' exists, 'C:\MyTestFile2.html' will be returned.)
+        /// </summary>
+        /// <param name="filename"> The file path. </param>
+        /// <returns> Returns the next available filename. </returns>
+        public string GetNextAvailableFilename(string filename)
+        {
+            if (!File.Exists(filename)) return filename;
+
+            string alternateFilename;
+            var fileNameIndex = 1;
+            do
+            {
+                fileNameIndex += 1;
+                alternateFilename = CreateNumberedFilename(filename, fileNameIndex);
+            } while (File.Exists(alternateFilename));
+
+            return alternateFilename;
+        }
+
+        private string CreateNumberedFilename(string filename, int number)
+        {
+            string plainName = Path.GetFileNameWithoutExtension(filename);
+            string extension = Path.GetExtension(filename);
+            return $"{plainName}{number}{extension}";
+        }
+
+
+
+
+        /// <summary>
         /// Delete all files from the temp path.
         /// </summary>
         public void Clean()
