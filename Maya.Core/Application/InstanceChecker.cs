@@ -6,7 +6,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Windows;
 
-namespace Maya.System
+namespace Maya.Core.Application
 {
     /// <summary>
     /// Use to determine if an application (based on process name) is currently running.
@@ -21,7 +21,11 @@ namespace Maya.System
 
         private static Mutex _instanceMutex;
 
-        /// <summary> Use to check if another instance of the current application is running. </summary>
+        /// <summary>
+        /// Use to check if another instance of the current application is running. <para />
+        /// WARNING: USE ONLY IN WPF/WINFORMS. The <see cref="T:System.Windows.MessageBox" /> will be shown and your
+        /// web server will be waiting (hung) until someone responds to the <see cref="T:System.Windows.MessageBox" /> on your web server.
+        /// </summary>
         /// <example>
         /// protected override void OnStartup(StartupEventArgs e)
         /// {
