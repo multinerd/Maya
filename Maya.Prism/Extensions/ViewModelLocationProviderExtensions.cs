@@ -10,9 +10,9 @@ namespace Maya.Prism.Extensions
         /// https://stackoverflow.com/a/37045539/5434784
         /// </summary>
         /// <param name="container"></param>
-        /// <typeparam name="TViewModel"></typeparam>
         /// <typeparam name="TView"></typeparam>
-        public static void RegisterViewModelForView<TViewModel, TView>(this IUnityContainer container)
+        /// <typeparam name="TViewModel"></typeparam>
+        public static void RegisterViewModelForView<TView, TViewModel>(this IUnityContainer container)
         {
             ViewModelLocationProvider.Register(typeof(TView).ToString(), () => container.Resolve<TViewModel>());
         }

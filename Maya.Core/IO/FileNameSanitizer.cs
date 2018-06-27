@@ -7,26 +7,25 @@ namespace Maya.Windows.Utilities
     /// <summary>
     /// Cleans paths of invalid characters.
     /// </summary>
-    public static class FilePathSanitizer
+    public static class FileNameSanitizer
     {
         private static readonly char[] InvalidFilenameChars;
 
         private static readonly char[] InvalidPathChars;
 
-        static FilePathSanitizer()
+        static FileNameSanitizer()
         {
             InvalidFilenameChars = Path.GetInvalidFileNameChars();
             InvalidPathChars = Path.GetInvalidPathChars();
             Array.Sort(InvalidFilenameChars);
             Array.Sort(InvalidPathChars);
-
         }
 
         /// <summary> Cleans a filename of invalid characters </summary>
         /// <param name="input">the string to clean</param>
         /// <param name="errorChar">the character which replaces bad characters</param>
-        /// <returns> A sanatized filename </returns>
-        public static string SanitizeFilename(string input, char errorChar)
+        /// <returns> A sanitized filename </returns>
+        public static string SanitizeFilename(string input, char errorChar = '_')
         {
             return Sanitize(input, InvalidFilenameChars, errorChar);
         }
@@ -34,8 +33,8 @@ namespace Maya.Windows.Utilities
         /// <summary> Cleans a path of invalid characters </summary>
         /// <param name="input">the string to clean</param>
         /// <param name="errorChar">the character which replaces bad characters</param>
-        /// <returns> A sanatized path </returns>
-        public static string SanitizePath(string input, char errorChar)
+        /// <returns> A sanitized path </returns>
+        public static string SanitizePath(string input, char errorChar = '_')
         {
             return Sanitize(input, InvalidPathChars, errorChar);
         }

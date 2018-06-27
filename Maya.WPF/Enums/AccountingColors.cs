@@ -17,8 +17,4 @@ namespace Maya.WPF.Enums
         /// </summary>
         BlackRed
     }
-
-
-
-
 }

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+     <!--Material Blue 50-->
+    <SolidColorBrush x:Key="EditableColumnColor" Color="#E3F2FD" />
+
+    <!--Material Purple 50-->
+    <SolidColorBrush x:Key="WhatIfColumnColor" Color="#EDE7F6" />
+
+    <!--Material Yellow 50-->
+    <SolidColorBrush x:Key="ExternalColumnColor" Color="#FFFDE7" />
+
+    <!--Material Purple 50-->
+    <SolidColorBrush x:Key="ItemSpecificColumnColor" Color="#F3E5F5" />
+                                                    
+    <!--Material Deep Orange 50-->
+    <SolidColorBrush x:Key="HistoricalColumnColor" Color="#FBE9E7" />
+
+</ResourceDictionary>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 // https://web.archive.org/web/20160202215105/http://indepthdev.azurewebsites.net:80/2010/10/reusable-editablemodelbase-using-ieditableobject/
 namespace Maya.WPF.Models
 {
+    /// <inheritdoc />
     public abstract class EditableModelBase<T> : /*BindableBase,*/ IEditableObject
     {
         private T Cache { get; set; }
@@ -14,6 +15,7 @@ namespace Maya.WPF.Models
 
         #region IEditableObject Members
 
+        /// <inheritdoc />
         public void BeginEdit()
         {
             Cache = Activator.CreateInstance<T>();
@@ -25,11 +27,13 @@ namespace Maya.WPF.Models
             }
         }
 
+        /// <inheritdoc />
         public void EndEdit()
         {
             Cache = default(T);
         }
 
+        /// <inheritdoc />
         public void CancelEdit()
         {
             foreach (var info in CurrentModel.GetType().GetProperties())

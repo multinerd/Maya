@@ -47,9 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityIndicatorModel.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Extensions\CollectionHelperTests.cs" />
+    <Compile Include="Collection\AsyncObservableCollection.cs" />
+    <Compile Include="Collection\AsyncObservableCollection1.cs" />
+    <Compile Include="EnumerateDirectory.cs" />
+    <Compile Include="Enum\EnumHelper.cs" />
+    <Compile Include="Enum\RandomEnum.cs" />
+    <Compile Include="Extensions\ApplicationExtensions.cs" />
+    <Compile Include="Extensions\CollectionHelper.cs" />
+    <Compile Include="Extensions\Contains.cs" />
+    <Compile Include="Extensions\DateTimeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLResults.cs" />
+    <Compile Include="Utilities\ConsoleHelper.cs" />
+    <Compile Include="Utilities\TypeSwitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
