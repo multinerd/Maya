@@ -26,7 +26,11 @@ namespace EntityPlus
 	public partial class MikeDevEntities : DbContext
     {
         /// <summary>Connection String</summary>
-		private const string SettingsConnectionString = "name=MikeDevEntities";
+#if DEBUG
+		private const string SettingsConnectionString = "name=MikeDevEntities_dev";
+#else
+        private const string SettingsConnectionString = "name=MikeDevEntities";
+#endif
 
         /// <summary>Initializes a new instance of the <see cref="MikeDevEntities"/> class.</summary>
         public MikeDevEntities() : base(SettingsConnectionString)
@@ -44,6 +48,7 @@ namespace EntityPlus
 		{
 			throw new UnintentionalCodeFirstException();
 		}
+
 
 		/// <summary>Gets the Album IDbSet property.</summary>
         public virtual IDbSet<Album> Album { get; set; }
@@ -74,7 +79,6 @@ namespace EntityPlus
 
 		/// <summary>Gets the Track IDbSet property.</summary>
         public virtual IDbSet<Track> Track { get; set; }
-
 
 		public virtual ObjectResult<Test_Result> Test()
 		{

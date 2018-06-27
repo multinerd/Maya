@@ -76,7 +76,11 @@ namespace <#=code.EscapeNamespace(code.VsNamespaceSuggestion()) #>
     {
 <# /* Begin Private Properties */ #>
         /// <summary>Connection String</summary>
-		private const string SettingsConnectionString = "name=<#=container.Name#>";
+#if DEBUG
+		private const string SettingsConnectionString = "name=<#=container.Name#>_dev";
+#else
+        private const string SettingsConnectionString = "name=<#=container.Name#>";
+#endif
 
 <# /* Begin Initalizers */ #>
         /// <summary>Initializes a new instance of the <see cref="<#=code.Escape(container)#>"/> class.</summary>
@@ -119,9 +123,9 @@ namespace <#=code.EscapeNamespace(code.VsNamespaceSuggestion()) #>
 	{
 		var entityname = typeMapper.GetTypeName(entitySet.ElementType);
 #>
+
 		/// <summary>Gets the <#=entityname#> IDbSet property.</summary>
         public virtual IDbSet<<#=entityname#>> <#=entityname#> { get; set; }
-
 <# /* End DbSet */ #>
 <#
 	}
