@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd1f598ae2024c4fa97c0004d803c53e" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="MikeDevModel.Album" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="MikeDevModel.Artist" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="MikeDevModel.Customer" Width="1.5" PointX="3" PointY="13" />
+        <EntityTypeShape EntityType="MikeDevModel.Employee" Width="1.5" PointX="0.75" PointY="12.375" />
+        <EntityTypeShape EntityType="MikeDevModel.Genre" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="MikeDevModel.Invoice" Width="1.5" PointX="5.25" PointY="13.375" />
+        <EntityTypeShape EntityType="MikeDevModel.InvoiceLine" Width="1.5" PointX="7.5" PointY="1.625" />
+        <EntityTypeShape EntityType="MikeDevModel.MediaType" Width="1.5" PointX="3" PointY="9.875" />
+        <EntityTypeShape EntityType="MikeDevModel.Playlist" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="MikeDevModel.Track" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="MikeDevModel.FK_AlbumArtistId" />
+        <AssociationConnector Association="MikeDevModel.FK_TrackAlbumId" />
+        <AssociationConnector Association="MikeDevModel.FK_CustomerSupportRepId" />
+        <AssociationConnector Association="MikeDevModel.FK_InvoiceCustomerId" />
+        <AssociationConnector Association="MikeDevModel.FK_EmployeeReportsTo" />
+        <AssociationConnector Association="MikeDevModel.FK_TrackGenreId" />
+        <AssociationConnector Association="MikeDevModel.FK_InvoiceLineInvoiceId" />
+        <AssociationConnector Association="MikeDevModel.FK_InvoiceLineTrackId" />
+        <AssociationConnector Association="MikeDevModel.FK_TrackMediaTypeId" />
+        <AssociationConnector Association="MikeDevModel.PlaylistTrack" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
