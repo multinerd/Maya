@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "000 Metadata", "000 Metadata", "{33BC662B-7F00-427F-A5C5-ABFEDFC0B334}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "100 Core", "100 Core", "{591452D9-EB7B-4E5A-B4C4-C92066AE1290}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "120 Amazon", "120 Amazon", "{8DE4373C-C4D4-45DA-8560-DE12E94A5659}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "210 Console", "210 Console", "{F5DCA344-20CD-4A3A-A51E-A2B5E9EB6A1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "220 WPF", "220 WPF", "{DF1A7BF7-520B-43BC-B4DB-B6879D51A63E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "230 ASP.Net", "230 ASP.Net", "{B507FD53-120D-4479-98DF-E01DBB19BEA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "999 Tests", "999 Tests", "{82AD4139-EBB3-432E-8068-38832DDE522E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "998 Tinker", "998 Tinker", "{2B71CE03-7F49-4790-8E89-CD6C629A59FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "900 CrashReporter", "900 CrashReporter", "{296DB218-59DE-4F97-AE44-2D3E395930D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "110 Mef", "110 Mef", "{6832DD36-B4C1-4733-AC2C-EDCFFD56CEB3}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BBDC3AB-1BCA-4814-839E-1C32D45A2002}
+	EndGlobalSection
+EndGlobal
