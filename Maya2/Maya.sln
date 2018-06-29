@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+VisualStudioVersion = 15.0.26730.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "000 Metadata", "000 Metadata", "{33BC662B-7F00-427F-A5C5-ABFEDFC0B334}"
 EndProject
@@ -23,11 +23,88 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "900 CrashReporter", "900 Cr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "110 Mef", "110 Mef", "{6832DD36-B4C1-4733-AC2C-EDCFFD56CEB3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Tests", "3. Tests", "{96624F17-2540-4E77-853F-7EE8320983D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBD.Framework.St2.0", "Tinker\HBD.Framework\HBD.Framework.St2.0\HBD.Framework.St2.0.csproj", "{3537F44C-263D-43FC-8F55-8E9A13F30784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBD.Framework.4xTests", "Tinker\HBD.Framework\HBD.Framework.4xTests\HBD.Framework.4xTests.csproj", "{17C3A736-14CE-4F60-B605-25FA55110C92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBD.Framework.StTests", "Tinker\HBD.Framework\HBD.Framework.StTests\HBD.Framework.StTests.csproj", "{E4ABA463-ECA1-4078-BC23-01913B259A4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E190D9BA-826E-4E0C-AD85-64B52A07DD20}"
+	ProjectSection(SolutionItems) = preProject
+		Tinker\HBD.Framework\HBD.Framework.nuspec = Tinker\HBD.Framework\HBD.Framework.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shares", "Shares", "{E7EE8814-3F86-4360-BD70-ACE78480EEA6}"
+	ProjectSection(SolutionItems) = preProject
+		Tinker\HBD.Framework\Shared\App.config = Tinker\HBD.Framework\Shared\App.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Northwind", "Northwind", "{2E74F94E-BB9D-4F22-8248-03E7EA269EE7}"
+	ProjectSection(SolutionItems) = preProject
+		Tinker\HBD.Framework\Shared\Northwind\Categories.csv = Tinker\HBD.Framework\Shared\Northwind\Categories.csv
+		Tinker\HBD.Framework\Shared\Northwind\Customers.csv = Tinker\HBD.Framework\Shared\Northwind\Customers.csv
+		Tinker\HBD.Framework\Shared\Northwind\Employees.csv = Tinker\HBD.Framework\Shared\Northwind\Employees.csv
+		Tinker\HBD.Framework\Shared\Northwind\Employees_PileDilimiters.csv = Tinker\HBD.Framework\Shared\Northwind\Employees_PileDilimiters.csv
+		Tinker\HBD.Framework\Shared\Northwind\EmployeeTerritories.csv = Tinker\HBD.Framework\Shared\Northwind\EmployeeTerritories.csv
+		Tinker\HBD.Framework\Shared\Northwind\Northwind_SchemaInfo.csv = Tinker\HBD.Framework\Shared\Northwind\Northwind_SchemaInfo.csv
+		Tinker\HBD.Framework\Shared\Northwind\Northwind_SchemaInfo_MaxValues.csv = Tinker\HBD.Framework\Shared\Northwind\Northwind_SchemaInfo_MaxValues.csv
+		Tinker\HBD.Framework\Shared\Northwind\Order Details.csv = Tinker\HBD.Framework\Shared\Northwind\Order Details.csv
+		Tinker\HBD.Framework\Shared\Northwind\Orders.csv = Tinker\HBD.Framework\Shared\Northwind\Orders.csv
+		Tinker\HBD.Framework\Shared\Northwind\Products.csv = Tinker\HBD.Framework\Shared\Northwind\Products.csv
+		Tinker\HBD.Framework\Shared\Northwind\Region.csv = Tinker\HBD.Framework\Shared\Northwind\Region.csv
+		Tinker\HBD.Framework\Shared\Northwind\Shippers.csv = Tinker\HBD.Framework\Shared\Northwind\Shippers.csv
+		Tinker\HBD.Framework\Shared\Northwind\Suppliers.csv = Tinker\HBD.Framework\Shared\Northwind\Suppliers.csv
+		Tinker\HBD.Framework\Shared\Northwind\Territories.csv = Tinker\HBD.Framework\Shared\Northwind\Territories.csv
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{379AA6B4-39FF-4497-9712-0BE03F8B1F8F}"
+	ProjectSection(SolutionItems) = preProject
+		Tinker\HBD.Framework\SonarQube\HBD.FrameworkCSharp.ruleset = Tinker\HBD.Framework\SonarQube\HBD.FrameworkCSharp.ruleset
+		Tinker\HBD.Framework\SonarQube\SolutionBinding.sqconfig = Tinker\HBD.Framework\SonarQube\SolutionBinding.sqconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBD.Framework.WpfApp", "Tinker\HBD.Framework\HBD.Framework.WpfApp\HBD.Framework.WpfApp.csproj", "{7C0B66CA-08C9-41CE-B413-59F343B7547D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3537F44C-263D-43FC-8F55-8E9A13F30784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3537F44C-263D-43FC-8F55-8E9A13F30784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3537F44C-263D-43FC-8F55-8E9A13F30784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3537F44C-263D-43FC-8F55-8E9A13F30784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C3A736-14CE-4F60-B605-25FA55110C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C3A736-14CE-4F60-B605-25FA55110C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C3A736-14CE-4F60-B605-25FA55110C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C3A736-14CE-4F60-B605-25FA55110C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4ABA463-ECA1-4078-BC23-01913B259A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4ABA463-ECA1-4078-BC23-01913B259A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4ABA463-ECA1-4078-BC23-01913B259A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4ABA463-ECA1-4078-BC23-01913B259A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0B66CA-08C9-41CE-B413-59F343B7547D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0B66CA-08C9-41CE-B413-59F343B7547D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0B66CA-08C9-41CE-B413-59F343B7547D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0B66CA-08C9-41CE-B413-59F343B7547D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96624F17-2540-4E77-853F-7EE8320983D9} = {2B71CE03-7F49-4790-8E89-CD6C629A59FC}
+		{3537F44C-263D-43FC-8F55-8E9A13F30784} = {2B71CE03-7F49-4790-8E89-CD6C629A59FC}
+		{17C3A736-14CE-4F60-B605-25FA55110C92} = {96624F17-2540-4E77-853F-7EE8320983D9}
+		{E4ABA463-ECA1-4078-BC23-01913B259A4C} = {96624F17-2540-4E77-853F-7EE8320983D9}
+		{E190D9BA-826E-4E0C-AD85-64B52A07DD20} = {2B71CE03-7F49-4790-8E89-CD6C629A59FC}
+		{E7EE8814-3F86-4360-BD70-ACE78480EEA6} = {E190D9BA-826E-4E0C-AD85-64B52A07DD20}
+		{2E74F94E-BB9D-4F22-8248-03E7EA269EE7} = {E7EE8814-3F86-4360-BD70-ACE78480EEA6}
+		{379AA6B4-39FF-4497-9712-0BE03F8B1F8F} = {2B71CE03-7F49-4790-8E89-CD6C629A59FC}
+		{7C0B66CA-08C9-41CE-B413-59F343B7547D} = {96624F17-2540-4E77-853F-7EE8320983D9}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4BBDC3AB-1BCA-4814-839E-1C32D45A2002}
+		SolutionGuid = {DAE6BB77-E730-4052-9CBC-BF8DF33386C7}
 	EndGlobalSection
 EndGlobal
