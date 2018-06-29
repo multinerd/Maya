@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBD.Framework.WpfApp", "Tin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maya.Core", "Maya.Core\Maya.Core.csproj", "{F1F0AAA8-E9BC-4C39-842E-AD740764C16B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maya.Core.Tests", "Maya.Core.Tests\Maya.Core.Tests.csproj", "{F297909E-A8E4-4F27-9948-0DAFBA02C857}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{F1F0AAA8-E9BC-4C39-842E-AD740764C16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1F0AAA8-E9BC-4C39-842E-AD740764C16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F0AAA8-E9BC-4C39-842E-AD740764C16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F297909E-A8E4-4F27-9948-0DAFBA02C857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F297909E-A8E4-4F27-9948-0DAFBA02C857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F297909E-A8E4-4F27-9948-0DAFBA02C857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F297909E-A8E4-4F27-9948-0DAFBA02C857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{379AA6B4-39FF-4497-9712-0BE03F8B1F8F} = {2B71CE03-7F49-4790-8E89-CD6C629A59FC}
 		{7C0B66CA-08C9-41CE-B413-59F343B7547D} = {96624F17-2540-4E77-853F-7EE8320983D9}
 		{F1F0AAA8-E9BC-4C39-842E-AD740764C16B} = {591452D9-EB7B-4E5A-B4C4-C92066AE1290}
+		{F297909E-A8E4-4F27-9948-0DAFBA02C857} = {82AD4139-EBB3-432E-8068-38832DDE522E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAE6BB77-E730-4052-9CBC-BF8DF33386C7}
