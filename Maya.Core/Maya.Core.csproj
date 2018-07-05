@@ -37,6 +37,9 @@
     <AssemblyOriginatorKeyFile>new Multinerd.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,15 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\InstanceChecker.cs" />
+    <Compile Include="Collections\Generics\IEnumerableExtensions.cs" />
     <Compile Include="IO\DirectoryHelper.cs" />
     <Compile Include="IO\FileNameSanitizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logger\" />
+    <Folder Include="Reflection\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="new Multinerd.pfx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

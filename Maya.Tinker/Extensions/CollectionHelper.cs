@@ -7,16 +7,7 @@ namespace Maya.Windows.Extensions
 {
     public static class CollectionHelper
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="source"></param>
-        /// <typeparam name="TSource"></typeparam>
-        /// <returns></returns>
-        public static ObservableCollection<TSource> ToObservableCollection<TSource>(this IEnumerable<TSource> source)
-        {
-            return new ObservableCollection<TSource>(source);
-        }
+
 
 
 
