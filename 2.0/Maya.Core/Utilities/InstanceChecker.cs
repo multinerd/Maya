@@ -1,24 +1,23 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Security.AccessControl;
-using System.Security.Principal;
 using System.Threading;
 using System.Windows;
 
-namespace Maya.Core.Application
+namespace Maya.Core.Utilities
 {
     /// <summary>
     /// Use to determine if an application (based on process name) is currently running.
     /// </summary>
-    [Obsolete("Switch to the 'Maya.Core' 2.0", true)]
+    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public static class InstanceChecker
     {
         [DllImport("user32.dll", SetLastError = true)]
-        static extern bool ShowWindowAsync(HandleRef windowHandle, int nCmdShow);
+        private static extern bool ShowWindowAsync(HandleRef windowHandle, int nCmdShow);
 
         [DllImport("user32.dll", SetLastError = true)]
-        static extern bool SetForegroundWindow(IntPtr windowHandle);
+        private static extern bool SetForegroundWindow(IntPtr windowHandle);
 
         private static Mutex _instanceMutex;
 
@@ -39,28 +38,23 @@ namespace Maya.Core.Application
         /// </example>
         public static bool IsAppRunning(Process app, bool bringToFront)
         {
-            var allowEveryoneRule = new MutexAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), MutexRights.FullControl, AccessControlType.Allow);
-            var securitySettings = new MutexSecurity();
-            securitySettings.AddAccessRule(allowEveryoneRule);
+            _instanceMutex = new Mutex(true, $@"Global\{app.ProcessName}", out var createdNew);
+            if (createdNew) return false;
 
-            _instanceMutex = new Mutex(true, $@"Global\{app.ProcessName}", out var createdNew, securitySettings);
-            if (!createdNew)
+            MessageBox.Show($"{app.ProcessName} is already running.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            _instanceMutex = null;
+
+            if (bringToFront)
             {
-                MessageBox.Show($"{app.ProcessName} is already running.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                _instanceMutex = null;
-                if (bringToFront)
+                var objProcesses = Process.GetProcessesByName(app.ProcessName);
+                if (objProcesses.Length > 0)
                 {
-                    Process[] objProcesses = Process.GetProcessesByName(app.ProcessName);
-                    if (objProcesses.Length > 0)
-                    {
-                        var hWnd = objProcesses[0].MainWindowHandle;
-                        ShowWindowAsync(new HandleRef(null, hWnd), 3);
-                        SetForegroundWindow(objProcesses[0].MainWindowHandle);
-                    }
+                    var hWnd = objProcesses[0].MainWindowHandle;
+                    ShowWindowAsync(new HandleRef(null, hWnd), 3);
+                    SetForegroundWindow(objProcesses[0].MainWindowHandle);
                 }
-                return true;
             }
-            return false;
+            return true;
         }
 
 
@@ -76,6 +70,5 @@ namespace Maya.Core.Application
         {
             _instanceMutex?.ReleaseMutex();
         }
-
     }
 }
