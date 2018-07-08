@@ -7,7 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "000 Metadata", "000 Metadat
 	ProjectSection(SolutionItems) = preProject
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
-		..\Changelog_1.0.md = ..\Changelog_1.0.md
 		..\Changelog_2.0.md = ..\Changelog_2.0.md
 		..\Checklist.md = ..\Checklist.md
 		..\LICENSE = ..\LICENSE

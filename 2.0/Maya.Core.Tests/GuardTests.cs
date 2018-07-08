@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using Xbehave;
 using Xunit;
 
 namespace Maya.Core.Tests
 {
-    public class GuardTests
+    public static class GuardTests
     {
         [Scenario]
         public static void NullArgument(string parameterName, object argument, Exception exception)
@@ -22,7 +21,7 @@ namespace Maya.Core.Tests
             "Then the exception should be an argument null exception"
                 .x(() => Assert.IsType<ArgumentNullException>(exception));
 
-            "And the exception message should contain the parameter name and \"null\""
+            "And the exception message should contain the parameter name and 'null'"
                 .x(() =>
                 {
                     Assert.Contains(parameterName, exception.Message);
@@ -49,7 +48,7 @@ namespace Maya.Core.Tests
             "Then the exception should be an argument null exception"
                 .x(() => Assert.IsType<ArgumentNullException>(exception));
 
-            "And the exception message should contain the parameter name and \"null\""
+            "And the exception message should contain the parameter name and 'null'"
                 .x(() =>
                 {
                     Assert.Contains(parameterName, exception.Message);
@@ -80,7 +79,7 @@ namespace Maya.Core.Tests
             "Then the exception should be an argument exception"
                 .x(() => Assert.IsType<ArgumentException>(exception));
 
-            "And the exception message should contain the parameter name, the property name and \"null\""
+            "And the exception message should contain the parameter name, the property name and 'null'"
                 .x(() =>
                 {
                     Assert.Contains(parameterName, exception.Message);
@@ -108,7 +107,7 @@ namespace Maya.Core.Tests
             "Then the exception should be an argument null exception"
                 .x(() => Assert.IsType<ArgumentNullException>(exception));
 
-            "And the exception message should contain the parameter name and \"null\""
+            "And the exception message should contain the parameter name and 'null'"
                 .x(() =>
                 {
                     Assert.Contains(parameterName, exception.Message);
@@ -139,7 +138,7 @@ namespace Maya.Core.Tests
             "Then the exception should be an argument exception"
                 .x(() => Assert.IsType<ArgumentException>(exception));
 
-            "And the exception message should contain the parameter name, the property name and \"null\""
+            "And the exception message should contain the parameter name, the property name and 'null'"
                 .x(() =>
                 {
                     Assert.Contains(parameterName, exception.Message);
