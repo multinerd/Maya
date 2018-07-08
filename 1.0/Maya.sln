@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "000 Metadata", "000 Metadat
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		.travis.yml = .travis.yml
+		..\Changelog_1.0.md = ..\Changelog_1.0.md
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection

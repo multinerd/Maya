@@ -4,6 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "000 Metadata", "000 Metadata", "{33BC662B-7F00-427F-A5C5-ABFEDFC0B334}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\Changelog_1.0.md = ..\Changelog_1.0.md
+		..\Changelog_2.0.md = ..\Changelog_2.0.md
+		..\Checklist.md = ..\Checklist.md
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\TODO.txt = ..\TODO.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "100 Core", "100 Core", "{591452D9-EB7B-4E5A-B4C4-C92066AE1290}"
 EndProject
