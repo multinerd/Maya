@@ -3,6 +3,14 @@
 ## UNRELEASED
 
 #### Added
+- Maya.Core
+  - `InstanceChecker`
+
+  - `IEnumerableExtensions`
+    - `ObservableCollection<TSource> ToObservableCollection<TSource>(this IEnumerable<TSource> source)`
+
+- Maya.Wpf
+  - `EditableModelBase`
 
 #### Changed
 
@@ -11,25 +19,5 @@
 #### Removed
 
 #### Fixed
-
-#### Security
-
-
-
-## Version 0.1.13
-
-
-#### Added
-- `CHANGELOG.md`
-
-#### Changed
-
-#### Deprecated
-- UpdateKit` (replaced with `UpdateKitWB / UpdateKitWBObjC`)
-
-#### Removed
-
-#### Fixed
-- incorrect URLs being passed  in `UpdateKitWB` | app will now close prior to updating (app will not update until use exits)
 
 #### Security
