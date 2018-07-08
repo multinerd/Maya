@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Maya.Core.Collections.Generic
+namespace Maya.Core.Collections
 {
     /// <summary>
     /// A collection of extensions that target <see cref="T:System.Collections.Generic.IEnumerable`1"/>
