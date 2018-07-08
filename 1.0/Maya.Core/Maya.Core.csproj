@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\InstanceChecker.cs" />
+    <Compile Include="Deprecated\InstanceChecker.cs" />
     <Compile Include="Collections\Generics\IEnumerableExtensions.cs" />
     <Compile Include="IO\DirectoryHelper.cs" />
     <Compile Include="IO\FileNameSanitizer.cs" />
