@@ -3,13 +3,13 @@
 ## UNRELEASED
 
 #### Added
-- Maya.Core
+- Maya.Core v0.0.0.1
   - `InstanceChecker`
 
   - `IEnumerableExtensions`
     - `ObservableCollection<TSource> ToObservableCollection<TSource>(this IEnumerable<TSource> source)`
 
-- Maya.Wpf
+- Maya.Wpf v0.0.0.1
   - `EditableModelBase`
 
 #### Changed
