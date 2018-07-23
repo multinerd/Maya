@@ -8,8 +8,7 @@ namespace Maya.Core.Collections
     /// A collection of extensions that target <see cref="T:System.Collections.Generic.IEnumerable`1"/>
     /// </summary>
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-    // ReSharper disable once InconsistentNaming
-    public static class IEnumerableExtensions
+    public static class EnumerableExtensions
     {
         /// <summary>Creates a <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" /> from an <see cref="T:System.Collections.Generic.IEnumerable`1" />.</summary>
         /// <param name="source">The <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create an <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" /> from.</param>
