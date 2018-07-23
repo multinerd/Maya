@@ -23,19 +23,9 @@ namespace Maya.Core.Utilities
 
         /// <summary>
         /// Use to check if another instance of the current application is running. <para />
-        /// WARNING: USE ONLY IN WPF/WINFORMS. The <see cref="T:System.Windows.MessageBox" /> will be shown and your
-        /// web server will be waiting (hung) until someone responds to the <see cref="T:System.Windows.MessageBox" /> on your web server.
+        /// WARNING: USE ONLY IN WPF/WINFORMS. A <see cref="T:System.Windows.MessageBox" /> will be shown and your
+        /// web server will be waiting (hung) until someone responds to the <see cref="T:System.Windows.MessageBox" />.
         /// </summary>
-        /// <example>
-        /// protected override void OnStartup(StartupEventArgs e)
-        /// {
-        ///     base.OnStartup(e);
-        ///     if (InstanceChecker.IsAppRunning(Process.GetCurrentProcess(), true))
-        ///         Current.Shutdown(0);
-        ///
-        ///     new MainWindow().Show();
-        /// }
-        /// </example>
         public static bool IsAppRunning(Process app, bool bringToFront)
         {
             _instanceMutex = new Mutex(true, $@"Global\{app.ProcessName}", out var createdNew);
@@ -58,14 +48,7 @@ namespace Maya.Core.Utilities
         }
 
 
-        /// <summary> Use on OnExit override </summary>
-        /// <example>
-        /// protected override void OnExit(ExitEventArgs e)
-        /// {
-        ///     InstanceChecker.Cleanup();
-        ///     base.OnExit(e);
-        /// }
-        /// </example>
+        /// <summary> Cleanup. </summary>
         public static void Cleanup()
         {
             _instanceMutex?.ReleaseMutex();
