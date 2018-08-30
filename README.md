@@ -63,3 +63,9 @@ See the [documentation][documentationURL] file for more information about each c
 [licenseBadge]: https://img.shields.io/badge/license-MIT-a.svg?style=flat&colorA=212121&colorB=616161 
 [licenseURL]: https://github.com/multinerd/Maya/blob/master/LICENSE
 [documentationURL]: https://github.com/multinerd/Maya/tree/master/Documentation
+
+
+
+Maya.Core               -   .Net Implementations  
+Maya.Business           -   Domain and Logic  
+Maya.EntityFramework    -   EF Code

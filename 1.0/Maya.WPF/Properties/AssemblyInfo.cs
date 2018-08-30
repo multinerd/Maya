@@ -37,8 +37,15 @@ using System.Windows.Markup;
 [assembly: AssemblyFileVersion("1.0.0.1")]
 
 
-[assembly: XmlnsPrefix("http://schemas.multinerd.io/maya/", "maya.Converters")]
-[assembly: XmlnsDefinition("http://schemas.multinerd.io/maya/", "Maya.WPF.Converters")]
+
+
+
+[assembly: XmlnsPrefix("http://schemas.multinerd.io/maya/converters/", "maya.Converters")]
+[assembly: XmlnsDefinition("http://schemas.multinerd.io/maya/converters/", "Maya.WPF.Converters")]
+
+
+[assembly: XmlnsPrefix("http://schemas.multinerd.io/maya/attached_behavior/", "maya.Attached_Behavior")]
+[assembly: XmlnsDefinition("http://schemas.multinerd.io/maya/attached_behavior/", "Maya.WPF.Attached_Behavior")]
 
 //[assembly: XmlnsDefinition("http://schemas.multinerd.io/maya/", "Maya.WPF.Helpers")]
 //[assembly: XmlnsDefinition("http://schemas.multinerd.io/maya/", "Maya.WPF.Models")]

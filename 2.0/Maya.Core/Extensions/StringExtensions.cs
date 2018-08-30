@@ -12,6 +12,95 @@ namespace Maya.Core.Extensions
     /// </summary>
     public static class StringExtensions
     {
+        public static string ToTitleCase(this string str, CultureInfo cultureInfo = null)
+        {
+            var culture = cultureInfo ?? CultureInfo.CurrentCulture;
+            return culture.TextInfo.ToTitleCase(str.ToLower());
+        }
+
+
+
+        /// <summary>
+        /// Converts PascalCase string to camelCase string.
+        /// </summary>
+        /// <param name="str">String to convert</param>
+        /// <param name="invariantCulture">Invariant culture</param>
+        /// <returns>camelCase of the string</returns>
+        public static string ToCamelCase(this string str, bool invariantCulture = true)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return str;
+            }
+
+            if (str.Length == 1)
+            {
+                return invariantCulture ? str.ToLowerInvariant() : str.ToLower();
+            }
+
+            return (invariantCulture ? char.ToLowerInvariant(str[0]) : char.ToLower(str[0])) + str.Substring(1);
+        }
+
+        /// <summary>
+        /// Converts PascalCase string to camelCase string in specified culture.
+        /// </summary>
+        /// <param name="str">String to convert</param>
+        /// <param name="culture">An object that supplies culture-specific casing rules</param>
+        /// <returns>camelCase of the string</returns>
+        public static string ToCamelCase(this string str, CultureInfo culture)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return str;
+            }
+
+            if (str.Length == 1)
+            {
+                return str.ToLower(culture);
+            }
+
+            return char.ToLower(str[0], culture) + str.Substring(1);
+        }
+
+        /// <summary>
+        /// Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+        /// Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+        /// </summary>
+        /// <param name="str">String to convert.</param>
+        /// <param name="invariantCulture">Invariant culture</param>
+        public static string ToSentenceCase(this string str, bool invariantCulture = false)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return str;
+            }
+
+            return Regex.Replace(
+                str,
+                "[a-z][A-Z]",
+                m => m.Value[0] + " " + (invariantCulture ? char.ToLowerInvariant(m.Value[1]) : char.ToLower(m.Value[1]))
+            );
+        }
+
+        /// <summary>
+        /// Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+        /// Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+        /// </summary>
+        /// <param name="str">String to convert.</param>
+        /// <param name="culture">An object that supplies culture-specific casing rules.</param>
+        public static string ToSentenceCase(this string str, CultureInfo culture)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return str;
+            }
+
+            return Regex.Replace(str, "[a-z][A-Z]", m => m.Value[0] + " " + char.ToLower(m.Value[1], culture));
+        }
+
+
+
+
         /// <summary>
         /// Adds a char to end of given string if it does not ends with the char.
         /// </summary>
@@ -174,75 +263,7 @@ namespace Maya.Core.Extensions
             return -1;
         }
 
-        /// <summary>
-        /// Removes first occurrence of the given postfixes from end of the given string.
-        /// Ordering is important. If one of the postFixes is matched, others will not be tested.
-        /// </summary>
-        /// <param name="str">The string.</param>
-        /// <param name="postFixes">one or more postfix.</param>
-        /// <returns>Modified string or the same string if it has not any of given postfixes</returns>
-        public static string RemovePostFix(this string str, params string[] postFixes)
-        {
-            if (str == null)
-            {
-                return null;
-            }
 
-            if (str == string.Empty)
-            {
-                return string.Empty;
-            }
-
-            if (postFixes.IsNullOrEmpty())
-            {
-                return str;
-            }
-
-            foreach (var postFix in postFixes)
-            {
-                if (str.EndsWith(postFix))
-                {
-                    return str.Left(str.Length - postFix.Length);
-                }
-            }
-
-            return str;
-        }
-
-        /// <summary>
-        /// Removes first occurrence of the given prefixes from beginning of the given string.
-        /// Ordering is important. If one of the preFixes is matched, others will not be tested.
-        /// </summary>
-        /// <param name="str">The string.</param>
-        /// <param name="preFixes">one or more prefix.</param>
-        /// <returns>Modified string or the same string if it has not any of given prefixes</returns>
-        public static string RemovePreFix(this string str, params string[] preFixes)
-        {
-            if (str == null)
-            {
-                return null;
-            }
-
-            if (str == string.Empty)
-            {
-                return string.Empty;
-            }
-
-            if (preFixes.IsNullOrEmpty())
-            {
-                return str;
-            }
-
-            foreach (var preFix in preFixes)
-            {
-                if (str.StartsWith(preFix))
-                {
-                    return str.Right(str.Length - preFix.Length);
-                }
-            }
-
-            return str;
-        }
 
         /// <summary>
         /// Gets a substring of a string from end of the string.
@@ -296,83 +317,7 @@ namespace Maya.Core.Extensions
             return str.Split(Environment.NewLine, options);
         }
 
-        /// <summary>
-        /// Converts PascalCase string to camelCase string.
-        /// </summary>
-        /// <param name="str">String to convert</param>
-        /// <param name="invariantCulture">Invariant culture</param>
-        /// <returns>camelCase of the string</returns>
-        public static string ToCamelCase(this string str, bool invariantCulture = true)
-        {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return str;
-            }
 
-            if (str.Length == 1)
-            {
-                return invariantCulture ? str.ToLowerInvariant() : str.ToLower();
-            }
-
-            return (invariantCulture ? char.ToLowerInvariant(str[0]) : char.ToLower(str[0])) + str.Substring(1);
-        }
-
-        /// <summary>
-        /// Converts PascalCase string to camelCase string in specified culture.
-        /// </summary>
-        /// <param name="str">String to convert</param>
-        /// <param name="culture">An object that supplies culture-specific casing rules</param>
-        /// <returns>camelCase of the string</returns>
-        public static string ToCamelCase(this string str, CultureInfo culture)
-        {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return str;
-            }
-
-            if (str.Length == 1)
-            {
-                return str.ToLower(culture);
-            }
-
-            return char.ToLower(str[0], culture) + str.Substring(1);
-        }
-
-        /// <summary>
-        /// Converts given PascalCase/camelCase string to sentence (by splitting words by space).
-        /// Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
-        /// </summary>
-        /// <param name="str">String to convert.</param>
-        /// <param name="invariantCulture">Invariant culture</param>
-        public static string ToSentenceCase(this string str, bool invariantCulture = false)
-        {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return str;
-            }
-
-            return Regex.Replace(
-                str,
-                "[a-z][A-Z]",
-                m => m.Value[0] + " " + (invariantCulture ? char.ToLowerInvariant(m.Value[1]) : char.ToLower(m.Value[1]))
-            );
-        }
-
-        /// <summary>
-        /// Converts given PascalCase/camelCase string to sentence (by splitting words by space).
-        /// Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
-        /// </summary>
-        /// <param name="str">String to convert.</param>
-        /// <param name="culture">An object that supplies culture-specific casing rules.</param>
-        public static string ToSentenceCase(this string str, CultureInfo culture)
-        {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return str;
-            }
-
-            return Regex.Replace(str, "[a-z][A-Z]", m => m.Value[0] + " " + char.ToLower(m.Value[1], culture));
-        }
 
         /// <summary>
         /// Converts string to enum value.
@@ -528,5 +473,75 @@ namespace Maya.Core.Extensions
 
             return str.Left(maxLength - postfix.Length) + postfix;
         }
+
+        //        /// <summary>
+        //        /// Removes first occurrence of the given postfixes from end of the given string.
+        //        /// Ordering is important. If one of the postFixes is matched, others will not be tested.
+        //        /// </summary>
+        //        /// <param name="str">The string.</param>
+        //        /// <param name="postFixes">one or more postfix.</param>
+        //        /// <returns>Modified string or the same string if it has not any of given postfixes</returns>
+        //        public static string RemovePostFix(this string str, params string[] postFixes)
+        //        {
+        //            if (str == null)
+        //            {
+        //                return null;
+        //            }
+        //
+        //            if (str == string.Empty)
+        //            {
+        //                return string.Empty;
+        //            }
+        //
+        //            if (postFixes.IsNullOrEmpty())
+        //            {
+        //                return str;
+        //            }
+        //
+        //            foreach (var postFix in postFixes)
+        //            {
+        //                if (str.EndsWith(postFix))
+        //                {
+        //                    return str.Left(str.Length - postFix.Length);
+        //                }
+        //            }
+        //
+        //            return str;
+        //        }
+        //
+        //        /// <summary>
+        //        /// Removes first occurrence of the given prefixes from beginning of the given string.
+        //        /// Ordering is important. If one of the preFixes is matched, others will not be tested.
+        //        /// </summary>
+        //        /// <param name="str">The string.</param>
+        //        /// <param name="preFixes">one or more prefix.</param>
+        //        /// <returns>Modified string or the same string if it has not any of given prefixes</returns>
+        //        public static string RemovePreFix(this string str, params string[] preFixes)
+        //        {
+        //            if (str == null)
+        //            {
+        //                return null;
+        //            }
+        //
+        //            if (str == string.Empty)
+        //            {
+        //                return string.Empty;
+        //            }
+        //
+        //            if (preFixes.IsNullOrEmpty())
+        //            {
+        //                return str;
+        //            }
+        //
+        //            foreach (var preFix in preFixes)
+        //            {
+        //                if (str.StartsWith(preFix))
+        //                {
+        //                    return str.Right(str.Length - preFix.Length);
+        //                }
+        //            }
+        //
+        //            return str;
+        //        }
     }
 }
