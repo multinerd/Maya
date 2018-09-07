@@ -1,45 +1,88 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
-    <AssemblyVersion>0.0.0.1</AssemblyVersion>
-    <FileVersion>0.0.0.1</FileVersion>
-    <Version>0.0.0.1</Version>
-    <ApplicationIcon />
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C83CC204-AE80-443A-A4B6-E43C7173ADD2}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <StartupObject />
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>new Multinerd.pfx</AssemblyOriginatorKeyFile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maya.Wpf</RootNamespace>
+    <AssemblyName>Maya.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\..\MikesProjects\MayaBinaries\Maya V2\Maya.Wpf</OutputPath>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\MikesProjects\MayaBinaries\Maya V2\Maya.Wpf\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationFramework.dll</HintPath>
-    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\Maya.Core\Maya.Core.csproj" />
+    <Compile Include="Attached Behavior\DoubleClickBehavior.cs" />
+    <Compile Include="Converters\NumberToColorConverter\INumberToColorConverter.cs" />
+    <Compile Include="Converters\NumberToColorConverter\NumberToColorConverter.cs" />
+    <Compile Include="Converters\Testing\Chaining\LinkedConverter.cs" />
+    <Compile Include="Converters\Testing\Chaining\SequentialValueConverter.cs" />
+    <Compile Include="Converters\Testing\IntToDoubleConverter.cs" />
+    <Compile Include="Converters\Testing\Text\HumanizerConverter.cs" />
+    <Compile Include="Converters\Testing\Text\TrimTextConverter.cs" />
+    <Compile Include="EditableModelBase.cs" />
+    <Compile Include="Enums\AccountingColors.cs" />
+    <Compile Include="Helpers\BoolChecks.cs" />
+    <Compile Include="Helpers\Ignore.cs" />
+    <Compile Include="Helpers\UIHelper.cs" />
+    <Compile Include="Markdown\Markdown.cs" />
+    <Compile Include="Markdown\TextToFlowDocumentConverter.cs" />
+    <Compile Include="Models\RadProgressBarModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
-    <None Update="Converters\Converters.xaml">
+    <Page Include="Converters\Converters.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Styles\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </None>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
-
+  <ItemGroup>
+    <None Include="new Multinerd.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
