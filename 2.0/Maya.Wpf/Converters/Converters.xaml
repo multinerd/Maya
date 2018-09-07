@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Maya.WPF.Converters">
+
+    <converters:NumberToColorConverter x:Key="NumberToColorConverter" />
+    <converters:NumberToColorConverter x:Key="InverseNumberToColorConverter" Inverse="True" />
+
+    <!--Testing Below-->
+    <converters:TrimTextConverter x:Key="TrimTextConverter" />
+    <converters:HumanizerConverter x:Key="HumanizerConverter" />
+    <converters:IntToDoubleConverter x:Key="IntToDoubleConverter" />
+
+</ResourceDictionary>

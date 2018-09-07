@@ -1,17 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
     <AssemblyVersion>0.0.0.1</AssemblyVersion>
     <FileVersion>0.0.0.1</FileVersion>
     <Version>0.0.0.1</Version>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>new Multinerd.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>D:\bin\Maya v2\Maya.Wpf</OutputPath>
+    <OutputPath>..\..\..\MikesProjects\MayaBinaries\Maya V2\Maya.Wpf</OutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +28,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Maya.Core\Maya.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Converters\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>
