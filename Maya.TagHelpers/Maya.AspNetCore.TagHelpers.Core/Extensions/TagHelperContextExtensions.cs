@@ -1,3 +1,28 @@
+﻿//-----------------------------------------------------------------------
+// <copyright file="TagHelperContextExtensions.cs" company="Bremus Solutions">
+//     Copyright (c) Bremus Solutions. All rights reserved.
+// </copyright>
+// <author>Timm Bremus</author>
+// <license>
+//      Licensed to the Apache Software Foundation(ASF) under one
+//      or more contributor license agreements.See the NOTICE file
+//      distributed with this work for additional information
+//      regarding copyright ownership.The ASF licenses this file
+//      to you under the Apache License, Version 2.0 (the
+//      "License"); you may not use this file except in compliance
+//      with the License.  You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//      Unless required by applicable law or agreed to in writing,
+//      software distributed under the License is distributed on an
+//      "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+//      KIND, either express or implied.  See the License for the
+//      specific language governing permissions and limitations
+//      under the License.
+// </license>
+//-----------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,119 +30,113 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Maya.AspNetCore.TagHelpers.Core.Extensions
 {
+    /// <summary>
+    /// Extension methods for the tag helper context.
+    /// </summary>
     public static class TagHelperContextExtensions
     {
+
+        /// <summary>
+        /// Determines whether the tag helper context [has context item] of the specified type.
+        /// </summary>
+        /// <typeparam name="T">The type of the context item.</typeparam>
+        /// <param name="context">The tag helper context.</param>
+        /// <returns>
+        /// <c>true</c> if [has context item] [the specified context]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool HasContextItem<T>(this TagHelperContext context)
         {
-            return context.HasContextItem<T>(true);
+            return HasContextItem<T>(context, true);
         }
 
+        /// <summary>
+        /// Determines whether the tag helper context [has context item] of the specified type.
+        /// </summary>
+        /// <typeparam name="T">The type of the context item.</typeparam>
+        /// <param name="context">The tag helper context.</param>
+        /// <param name="useInherited">if set to <c>true</c> [use inherited].</param>
+        /// <returns>
+        /// <c>true</c> if [has context item] [the specified context]; otherwise, <c>false</c>.
+        /// </returns>
         public static bool HasContextItem<T>(this TagHelperContext context, bool useInherited)
         {
             return context.HasContextItem(typeof(T), useInherited);
         }
 
-        public static bool HasContextItem<T>(this TagHelperContext context, string key)
-        {
-            return context.HasContextItem(typeof(T), key);
-        }
-
         public static bool HasContextItem(this TagHelperContext context, Type type)
         {
-            return context.HasContextItem(type, true);
+            return HasContextItem(context, type, true);
         }
 
         public static bool HasContextItem(this TagHelperContext context, Type type, bool useInherited)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
-
             if (type == null)
                 throw new ArgumentNullException(nameof(type));
+            var contextItem = GetContextItem(context, type, useInherited);
+            return contextItem != null && type.IsInstanceOfType(contextItem);
+        }
 
-            var contextItem = context.GetContextItem(type, useInherited);
-            if (contextItem != null)
-                return type.IsInstanceOfType(contextItem);
-
-            return false;
+        public static bool HasContextItem<T>(this TagHelperContext context, string key)
+        {
+            return HasContextItem(context, typeof(T), key);
         }
 
         public static bool HasContextItem(this TagHelperContext context, Type type, string key)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
-
             if (type == null)
                 throw new ArgumentNullException(nameof(type));
-
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
-
-            if (context.Items.ContainsKey(key))
-                return type.IsInstanceOfType(context.Items[key]);
-
-            return false;
+            return context.Items.ContainsKey(key) && type.IsInstanceOfType(context.Items[key]);
         }
-
 
         public static T GetContextItem<T>(this TagHelperContext context) where T : class
         {
-            return context.GetContextItem<T>(true);
+            return GetContextItem<T>(context, true);
         }
 
         public static T GetContextItem<T>(this TagHelperContext context, bool useInherited) where T : class
         {
-            return context.GetContextItem(typeof(T), useInherited) as T;
-        }
-
-        public static T GetContextItem<T>(this TagHelperContext context, string key) where T : class
-        {
-            return context.GetContextItem(typeof(T), key) as T;
+            return GetContextItem(context, typeof(T), useInherited) as T;
         }
 
         public static object GetContextItem(this TagHelperContext context, Type type)
         {
-            return context.GetContextItem(type, true);
+            return GetContextItem(context, type, true);
+        }
+
+        public static T GetContextItem<T>(this TagHelperContext context, string key) where T : class
+        {
+            return GetContextItem(context, typeof(T), key) as T;
         }
 
         public static object GetContextItem(this TagHelperContext context, Type type, string key)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
-
             if (type == null)
                 throw new ArgumentNullException(nameof(type));
-
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
-
-            if (!context.Items.ContainsKey(key) || !type.IsInstanceOfType(context.Items[key]))
-                return null;
-
-            return context.Items[key];
+            return context.Items.ContainsKey(key) && type.IsInstanceOfType(context.Items[key]) ? context.Items[key] : null;
         }
 
         public static object GetContextItem(this TagHelperContext context, Type type, bool useInherit)
         {
             if (context.Items.ContainsKey(type))
-                return context.Items
-                    .First(
-                        kVP => kVP.Key.Equals(type)).Value;
+                return context.Items.First(kVP => kVP.Key.Equals(type)).Value;
             if (useInherit)
-                return context.Items.FirstOrDefault(
-                    kVP =>
-                    {
-                        if ((object) (kVP.Key as Type) != null)
-                            return type.IsAssignableFrom((Type) kVP.Key);
-                        return false;
-                    }).Value;
+                return context.Items.FirstOrDefault(kVP => kVP.Key is Type && type.IsAssignableFrom((Type)kVP.Key)).Value;
             return null;
         }
 
-
         public static void SetContextItem<T>(this TagHelperContext context, T contextItem)
         {
-            context.SetContextItem(typeof(T), contextItem);
+            SetContextItem(context, typeof(T), contextItem);
         }
 
         public static void SetContextItem(this TagHelperContext context, Type type, object contextItem)
@@ -144,20 +163,19 @@ namespace Maya.AspNetCore.TagHelpers.Core.Extensions
                 context.Items.Add(key, contextItem);
         }
 
-
         public static void RemoveContextItem<T>(this TagHelperContext context)
         {
-            context.RemoveContextItem<T>(true);
+            RemoveContextItem<T>(context, true);
         }
 
         public static void RemoveContextItem<T>(this TagHelperContext context, bool useInherited)
         {
-            context.RemoveContextItem(typeof(T), useInherited);
+            RemoveContextItem(context, typeof(T), useInherited);
         }
 
         public static void RemoveContextItem(this TagHelperContext context, Type type)
         {
-            context.RemoveContextItem(type, true);
+            RemoveContextItem(context, type, true);
         }
 
         public static void RemoveContextItem(this TagHelperContext context, Type type, bool useInherited)
@@ -167,23 +185,12 @@ namespace Maya.AspNetCore.TagHelpers.Core.Extensions
             if (type == null)
                 throw new ArgumentNullException(nameof(type));
             if (context.Items.ContainsKey(type))
-            {
                 context.Items.Remove(type);
-            }
-            else
+            else if (useInherited)
             {
-                if (!useInherited)
-                    return;
-                var keyValuePair = context.Items.FirstOrDefault(
-                    kVP =>
-                    {
-                        if ((object) (kVP.Key as Type) != null)
-                            return ((Type) kVP.Key).IsAssignableFrom(type);
-                        return false;
-                    });
-                if (keyValuePair.Equals(new KeyValuePair<object, object>()))
-                    return;
-                context.Items.Remove(keyValuePair);
+                var key = context.Items.FirstOrDefault(kVP => kVP.Key is Type && ((Type)kVP.Key).IsAssignableFrom(type));
+                if (!key.Equals(default(KeyValuePair<object, object>)))
+                    context.Items.Remove(key);
             }
         }
 
@@ -193,9 +200,8 @@ namespace Maya.AspNetCore.TagHelpers.Core.Extensions
                 throw new ArgumentNullException(nameof(context));
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
-            if (!context.Items.ContainsKey(key))
-                return;
-            context.Items.Remove(key);
+            if (context.Items.ContainsKey(key))
+                context.Items.Remove(key);
         }
     }
 }
