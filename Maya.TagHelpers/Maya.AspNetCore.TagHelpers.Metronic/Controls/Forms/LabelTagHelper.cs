@@ -1,4 +1,4 @@
-﻿using Maya.AspNetCore.TagHelpers.Core.Extensions;
+using Maya.AspNetCore.TagHelpers.Core.Extensions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -32,7 +32,7 @@ namespace Maya.AspNetCore.TagHelpers.Metronic.Controls.Forms
                 tagBuilder.AddCssClass("sr-only");
             tagBuilder.InnerHtml.Append(content);
             if (isRequired)
-                tagBuilder.InnerHtml.AppendHtml("<span class=\"required\" aria-required=\"true\"> * </span>");
+                tagBuilder.InnerHtml.AppendHtml("<span class=\"required\" aria-required=\"true\" style=\"color: red;\"> * </span>");
             if (formContext != null && formContext.IsHorizontal)
             {
                 tagBuilder.AddCssClass("col-form-label");

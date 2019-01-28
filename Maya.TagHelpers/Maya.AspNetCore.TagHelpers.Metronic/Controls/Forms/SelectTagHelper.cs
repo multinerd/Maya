@@ -1,4 +1,4 @@
-﻿using Maya.AspNetCore.TagHelpers.Core.Attributes.Controls;
+using Maya.AspNetCore.TagHelpers.Core.Attributes.Controls;
 using Maya.AspNetCore.TagHelpers.Core.Extensions;
 using Maya.AspNetCore.TagHelpers.Metronic.Extensions;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -12,7 +12,7 @@ namespace Maya.AspNetCore.TagHelpers.Metronic.Controls.Forms
         {
             this.BindProperty(context);
             output.AddCssClass("form-control");
-            this.RenderBinding(output, false, true, true, true, true, true);
+            this.RenderBinding(output, false, Validation, true, true, true, true);
         }
     }
 }
