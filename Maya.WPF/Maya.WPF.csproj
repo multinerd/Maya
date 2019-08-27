@@ -4,19 +4,20 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AE79ED59-ED65-48C6-BA94-15826195DDFB}</ProjectGuid>
+    <ProjectGuid>{C83CC204-AE80-443A-A4B6-E43C7173ADD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Maya.WPF</RootNamespace>
-    <AssemblyName>Maya.WPF</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Maya.Wpf</RootNamespace>
+    <AssemblyName>Maya.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\MikesProjects\MayaBinaries\Maya V2\Maya.Wpf\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,24 +25,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Maya.WPF\</OutputPath>
+    <OutputPath>..\..\..\bin\Maya v2\Maya.Wpf\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>D:\bin\Maya.WPF\Maya.WPF.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>new Multinerd.pfx</AssemblyOriginatorKeyFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RequireThat">
-      <HintPath>..\..\..\bin\RequireThat.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
@@ -54,40 +47,44 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attached Behavior\DoubleClickBehavior.cs" />
     <Compile Include="Converters\NumberToColorConverter\INumberToColorConverter.cs" />
-    <Compile Include="Enums\AccountingColors.cs" />
-    <Compile Include="Converters\Testing\Chaining\LinkedConverter.cs" />
-    <Compile Include="Converters\Testing\IntToDoubleConverter.cs" />
     <Compile Include="Converters\NumberToColorConverter\NumberToColorConverter.cs" />
+    <Compile Include="Converters\Testing\Chaining\LinkedConverter.cs" />
     <Compile Include="Converters\Testing\Chaining\SequentialValueConverter.cs" />
+    <Compile Include="Converters\Testing\IntToDoubleConverter.cs" />
     <Compile Include="Converters\Testing\Text\HumanizerConverter.cs" />
     <Compile Include="Converters\Testing\Text\TrimTextConverter.cs" />
+    <Compile Include="EditableModelBase.cs" />
+    <Compile Include="Enums\AccountingColors.cs" />
     <Compile Include="Helpers\BoolChecks.cs" />
     <Compile Include="Helpers\Ignore.cs" />
-    <Compile Include="Models\EditableModelBase.cs" />
+    <Compile Include="Helpers\UIHelper.cs" />
+    <Compile Include="Markdown\Markdown.cs" />
+    <Compile Include="Markdown\TextToFlowDocumentConverter.cs" />
     <Compile Include="Models\RadProgressBarModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helpers\UIHelper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="new Multinerd.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Converters\Converters.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\Icons.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Styles\Colors.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="new Multinerd.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

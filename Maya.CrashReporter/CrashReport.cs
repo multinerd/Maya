@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.DirectoryServices.AccountManagement;
@@ -87,14 +87,6 @@ namespace Maya.CrashReporter
 
         private void ButtonSendReportClick(object sender, EventArgs e)
         {
-            SendEmail();
-
-            _progressDialog = new ProgressDialog();
-            _progressDialog.ShowDialog();
-        }
-
-        public void SendEmail()
-        {
             var fromAddress = new MailAddress(_crashReport.FromEmail);
             var toAddress = new MailAddress(_crashReport.ToEmail);
             var subject = $"{_crashReport.ApplicationTitle} {_crashReport.ApplicationVersion} Crash Report";
@@ -121,6 +113,9 @@ namespace Maya.CrashReporter
 
             smtpClient.SendCompleted += SmtpClientSendCompleted;
             smtpClient.SendAsync(message, "Crash Report");
+
+            _progressDialog = new ProgressDialog();
+            _progressDialog.ShowDialog();
         }
 
         private void SmtpClientSendCompleted(object sender, AsyncCompletedEventArgs e)

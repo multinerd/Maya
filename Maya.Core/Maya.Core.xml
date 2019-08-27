@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Maya.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Maya.Core.Collections.EnumerableExtensions">
+            <summary>
+            A collection of extensions that target <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Collections.EnumerableExtensions.ToObservableCollection``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Creates a <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" /> from an <see cref="T:System.Collections.Generic.IEnumerable`1" />.</summary>
+            <param name="source">The <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create an <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" /> from.</param>
+            <typeparam name="TSource">The type of the elements of <paramref name="source" />.</typeparam>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" /> that contains elements from the input sequence.</returns>
+        </member>
+        <member name="T:Maya.Core.Extensions.ArrayExtensions">
+            <summary>
+            Extension methods for Array class.
+            </summary>
+        </member>
+        <member name="T:Maya.Core.Extensions.ConsoleEx">
+            <summary>
+            A Console Helper
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.ConsoleEx.PrintProgramName(System.String)">
+            <summary>
+            Centers text in console in between 2 dividers.
+            </summary>
+            <param name="asciiText"> The string to pass. </param>
+        </member>
+        <member name="M:Maya.Core.Extensions.ConsoleEx.CenterInConsole(System.String)">
+            <summary>
+            Centers text in the console.
+            </summary>
+            <param name="text"> The text to center. </param>
+        </member>
+        <member name="M:Maya.Core.Extensions.ConsoleEx.WriteConfirm(System.String)">
+            <summary>
+            Writes the specified string value, followed by the current line terminator, to the standard output stream, using White text and DarkGreen background.
+            </summary>
+            <param name="value"> The value to write. </param>
+        </member>
+        <member name="M:Maya.Core.Extensions.ConsoleEx.WriteInfo(System.String)">
+            <summary>
+            Writes the specified string value, followed by the current line terminator, to the standard output stream, using White text and DarkCyan background.
+            </summary>
+            <param name="value"> The value to write. </param>
+        </member>
+        <member name="M:Maya.Core.Extensions.ConsoleEx.WriteError(System.String)">
+            <summary>
+            Writes the specified string value, followed by the current line terminator, to the standard output stream, using White text and DarkRed background.
+            </summary>
+            <param name="value"> The value to write. </param>
+        </member>
+        <member name="M:Maya.Core.Extensions.ConsoleEx.WriteBlankLine">
+            <summary>
+            Writes a blank line, followed by the current line terminator, to the standard output stream.
+            </summary>
+        </member>
+        <member name="T:Maya.Core.Extensions.StringExtensions">
+            <summary>
+            Extension methods for String class.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToCamelCase(System.String,System.Boolean)">
+            <summary>
+            Converts PascalCase string to camelCase string.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="invariantCulture">Invariant culture</param>
+            <returns>camelCase of the string</returns>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToCamelCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts PascalCase string to camelCase string in specified culture.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="culture">An object that supplies culture-specific casing rules</param>
+            <returns>camelCase of the string</returns>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToSentenceCase(System.String,System.Boolean)">
+            <summary>
+            Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+            Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+            </summary>
+            <param name="str">String to convert.</param>
+            <param name="invariantCulture">Invariant culture</param>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToSentenceCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+            Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+            </summary>
+            <param name="str">String to convert.</param>
+            <param name="culture">An object that supplies culture-specific casing rules.</param>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.EnsureEndsWith(System.String,System.Char)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.EnsureEndsWith(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.EnsureEndsWith(System.String,System.Char,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.EnsureStartsWith(System.String,System.Char)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.EnsureStartsWith(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.EnsureStartsWith(System.String,System.Char,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Indicates whether this string is null or an System.String.Empty string.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            indicates whether this string is null, empty, or consists only of white-space characters.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.Left(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.NormalizeLineEndings(System.String)">
+            <summary>
+            Converts line endings in the string to <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.NthIndexOf(System.String,System.Char,System.Int32)">
+            <summary>
+            Gets index of nth occurence of a char in a string.
+            </summary>
+            <param name="str">source string to be searched</param>
+            <param name="c">Char to search in <see cref="!:str"/></param>
+            <param name="n">Count of the occurence</param>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.Right(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from end of the string.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.Split(System.String,System.String)">
+            <summary>
+            Uses string.Split method to split given string by given separator.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.Split(System.String,System.String,System.StringSplitOptions)">
+            <summary>
+            Uses string.Split method to split given string by given separator.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.SplitToLines(System.String)">
+            <summary>
+            Uses string.Split method to split given string by <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.SplitToLines(System.String,System.StringSplitOptions)">
+            <summary>
+            Uses string.Split method to split given string by <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToEnum``1(System.String)">
+            <summary>
+            Converts string to enum value.
+            </summary>
+            <typeparam name="T">Type of enum</typeparam>
+            <param name="value">String value to convert</param>
+            <returns>Returns enum object</returns>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToEnum``1(System.String,System.Boolean)">
+            <summary>
+            Converts string to enum value.
+            </summary>
+            <typeparam name="T">Type of enum</typeparam>
+            <param name="value">String value to convert</param>
+            <param name="ignoreCase">Ignore case</param>
+            <returns>Returns enum object</returns>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToPascalCase(System.String,System.Boolean)">
+            <summary>
+            Converts camelCase string to PascalCase string.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="invariantCulture">Invariant culture</param>
+            <returns>PascalCase of the string</returns>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.ToPascalCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts camelCase string to PascalCase string in specified culture.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="culture">An object that supplies culture-specific casing rules</param>
+            <returns>PascalCase of the string</returns>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.Truncate(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.TruncateWithPostfix(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            It adds a "..." postfix to end of the string if it's truncated.
+            Returning string can not be longer than maxLength.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:Maya.Core.Extensions.StringExtensions.TruncateWithPostfix(System.String,System.Int32,System.String)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            It adds given <paramref name="postfix"/> to end of the string if it's truncated.
+            Returning string can not be longer than maxLength.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="T:Maya.Core.Guard">
+            <summary>
+            Provides guard clauses.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Guard.AgainstNullArgument``1(System.String,``0)">
+            <summary>
+            Guards against a null argument.
+            </summary>
+            <typeparam name="TArgument">The type of the argument.</typeparam>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="argument">The argument.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument" /> is <c>null</c>.</exception>
+            <remarks>
+            <typeparamref name="TArgument"/> is restricted to reference types to avoid boxing of value type objects.
+            </remarks>
+        </member>
+        <member name="M:Maya.Core.Guard.AgainstNullArgumentIfNullable``1(System.String,``0)">
+            <summary>
+            Guards against a null argument if <typeparamref name="TArgument" /> can be <c>null</c>.
+            </summary>
+            <typeparam name="TArgument">The type of the argument.</typeparam>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="argument">The argument.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="argument" /> is <c>null</c>.</exception>
+            <remarks>
+            Performs a type check to avoid boxing of value type objects.
+            </remarks>
+        </member>
+        <member name="M:Maya.Core.Guard.AgainstNullArgumentProperty``1(System.String,System.String,``0)">
+            <summary>
+            Guards against a null argument property value.
+            </summary>
+            <typeparam name="TProperty">The type of the property.</typeparam>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="argumentProperty">The argument property.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="argumentProperty" /> is <c>null</c>.</exception>
+            <remarks>
+            <typeparamref name="TProperty"/> is restricted to reference types to avoid boxing of value type objects.
+            </remarks>
+        </member>
+        <member name="M:Maya.Core.Guard.AgainstNullArgumentPropertyIfNullable``1(System.String,System.String,``0)">
+            <summary>
+            Guards against a null argument property value if <typeparamref name="TProperty"/> can be <c>null</c>.
+            </summary>
+            <typeparam name="TProperty">The type of the property.</typeparam>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="argumentProperty">The argument property.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="argumentProperty" /> is <c>null</c>.</exception>
+            <remarks>
+            Performs a type check to avoid boxing of value type objects.
+            </remarks>
+        </member>
+        <member name="M:Maya.Core.Guard.IsNullableType(System.Type)">
+            <summary>
+            Determines whether the specified type is a nullable type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>
+              <c>true</c> if the specified type is a nullable type; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Maya.Core.Guard.ValidatedNotNullAttribute">
+            <summary>
+            When applied to a parameter,
+            this attribute provides an indication to code analysis that the argument has been null checked.
+            </summary>
+        </member>
+        <member name="T:Maya.Core.IO.GenerateFileNameType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Maya.Core.IO.GenerateFileNameType.Date">
+            <summary> Generate a file name based on <see cref="T:System.DateTime.Now.Ticks"/> </summary>
+        </member>
+        <member name="F:Maya.Core.IO.GenerateFileNameType.DateHash">
+            <summary> Generate a file name based on <see cref="M:System.DateTime.Now.Ticks.GetHashCode()"/> </summary>
+        </member>
+        <member name="F:Maya.Core.IO.GenerateFileNameType.Guid">
+            <summary> Generate a file name using a <see cref="T:System.Guid"/> </summary>
+        </member>
+        <member name="F:Maya.Core.IO.GenerateFileNameType.Random">
+            <summary> Generate a random file name </summary>
+        </member>
+        <member name="T:Maya.Core.IO.DirectoryHelper">
+            <summary>
+            A bunch of useful Directory methods.
+            </summary>
+        </member>
+        <member name="P:Maya.Core.IO.DirectoryHelper.FolderName">
+            <summary> Returns the Folder Name ONLY </summary>
+        </member>
+        <member name="P:Maya.Core.IO.DirectoryHelper.BasePath">
+            <summary> Get the directory's base path. </summary>
+        </member>
+        <member name="P:Maya.Core.IO.DirectoryHelper.FullPath">
+            <summary> Get the directory's full path. </summary>
+        </member>
+        <member name="M:Maya.Core.IO.DirectoryHelper.#ctor(System.String,System.String,System.Boolean)">
+            <summary> Create a Directory to act as the applications temp folder. </summary>
+            <param name="folderName">The folder name to use.</param>
+            <param name="basePath">The base path to use. Defaults to <see cref="M:System.IO.Path.GetTempPath()"/></param>
+            <param name="createIfNeeded">Create the folder if it does not exist. Defaults to true.</param>
+        </member>
+        <member name="M:Maya.Core.IO.DirectoryHelper.GetPathFor(System.String)">
+            <summary>
+            Return a string by combining the temp directory's full path and the path you provide.
+            </summary>
+            <param name="path"> The path to append.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Maya.Core.IO.DirectoryHelper.GenerateFileName(Maya.Core.IO.GenerateFileNameType)">
+            <summary>
+            Generate a random file name.
+            </summary>
+            <param name="g"> The type of method used to generate file name.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Maya.Core.IO.DirectoryHelper.GetNextAvailableFilename(System.String)">
+            <summary>
+            Get the next available name for a file. (Ex: if 'C:\MyTestFile.html' exists, 'C:\MyTestFile2.html' will be returned.)
+            </summary>
+            <param name="filename"> The file path. </param>
+            <returns> Returns the next available filename. </returns>
+        </member>
+        <member name="M:Maya.Core.IO.DirectoryHelper.Clean">
+            <summary>
+            Delete all files from the temp path.
+            </summary>
+        </member>
+        <member name="T:Maya.Core.IO.DirectoryExtensions">
+            <summary>
+            Directory Extensions
+            </summary>
+        </member>
+        <member name="M:Maya.Core.IO.DirectoryExtensions.DeleteAllFiles(System.IO.DirectoryInfo)">
+            <summary>
+            Delete all files from the temp path.
+            </summary>
+            <param name="directory"> the directory to clean</param>
+        </member>
+        <member name="T:Maya.Core.IO.FileNameSanitizer">
+            <summary>
+            Cleans paths of invalid characters.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.IO.FileNameSanitizer.SanitizeFilename(System.String,System.Char)">
+            <summary> Cleans a filename of invalid characters </summary>
+            <param name="input">the string to clean</param>
+            <param name="errorChar">the character which replaces bad characters</param>
+            <returns> A sanitized filename </returns>
+        </member>
+        <member name="M:Maya.Core.IO.FileNameSanitizer.SanitizePath(System.String,System.Char)">
+            <summary> Cleans a path of invalid characters </summary>
+            <param name="input">the string to clean</param>
+            <param name="errorChar">the character which replaces bad characters</param>
+            <returns> A sanitized path </returns>
+        </member>
+        <member name="T:Maya.Core.IO.WindowsShortcut">
+            <summary>
+            Create a Windows shortcut pointing to a file or folder.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.IO.WindowsShortcut.#ctor(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sourceDestination"> The path the shortcut will be created from. </param>
+            <param name="targetDestination"> The location where the shortcut will be placed. </param>
+            <param name="targetFileName"> The name of the shortcut file created. <para/>NOTE: DO NOT include the '.lnk' file extension. </param>
+        </member>
+        <member name="M:Maya.Core.IO.WindowsShortcut.Create">
+            <summary>
+            Create the window shortcut.
+            </summary>
+        </member>
+        <member name="T:Maya.Core.Utilities.InstanceChecker">
+            <summary>
+            Use to determine if an application (based on process name) is currently running.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Utilities.InstanceChecker.IsAppRunning(System.Diagnostics.Process,System.Boolean)">
+            <summary>
+            Use to check if another instance of the current application is running. <para />
+            WARNING: USE ONLY IN WPF/WINFORMS. A <see cref="T:System.Windows.MessageBox" /> will be shown and your
+            web server will be waiting (hung) until someone responds to the <see cref="T:System.Windows.MessageBox" />.
+            </summary>
+        </member>
+        <member name="M:Maya.Core.Utilities.InstanceChecker.Cleanup">
+            <summary> Cleanup. </summary>
+        </member>
+    </members>
+</doc>

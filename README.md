@@ -2,7 +2,6 @@
 
 [![CI Status](http://img.shields.io/travis/multinerd/Maya.svg?style=flat)](https://travis-ci.org/multinerd/Maya)
 [![codebeat badge](https://codebeat.co/badges/b3e585b9-fc44-484d-9215-251b151bce46)](https://codebeat.co/projects/github-com-multinerd-maya-master)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmultinerd%2FMaya.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmultinerd%2FMaya?ref=badge_shield)
 
 Maya is a bunch of tools to streamline my developement. See [usage](#usage) for more information.
 
@@ -66,4 +65,7 @@ See the [documentation][documentationURL] file for more information about each c
 [documentationURL]: https://github.com/multinerd/Maya/tree/master/Documentation
 
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmultinerd%2FMaya.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmultinerd%2FMaya?ref=badge_large)
+
+Maya.Core               -   .Net Implementations  
+Maya.Business           -   Domain and Logic  
+Maya.EntityFramework    -   EF Code

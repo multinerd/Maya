@@ -699,7 +699,7 @@ namespace Maya.Amazon.Helpers
                 #endregion
             };
 
-            var cache = mappings.ToList(); // need .ToList() to avoid modifying while still enumerating
+            var cache = mappings.ToList();
             foreach (var mapping in cache)
             {
                 if (!mappings.ContainsKey(mapping.Value))

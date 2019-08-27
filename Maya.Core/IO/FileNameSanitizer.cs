@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Maya.Windows.Utilities
+namespace Maya.Core.IO
 {
     /// <summary>
     /// Cleans paths of invalid characters.
@@ -42,7 +42,7 @@ namespace Maya.Windows.Utilities
         private static string Sanitize(string input, char[] invalidChars, char errorChar)
         {
             if (input == null)
-                return null; 
+                return null;
 
             var result = new StringBuilder();
 
@@ -54,3 +54,4 @@ namespace Maya.Windows.Utilities
 
     }
 }
+

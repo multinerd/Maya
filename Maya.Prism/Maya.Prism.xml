@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Maya.Prism</name>
+    </assembly>
+    <members>
+        <member name="M:Maya.Prism.Extensions.ViewModelLocationProviderExtensions.RegisterViewModelForView``2(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary> Bind a ViewModel to a View by name. https://stackoverflow.com/a/37045539/5434784</summary>
+            <param name="container"></param>
+            <typeparam name="TView">The type of the view.</typeparam>
+            <typeparam name="TViewModel">The type of the elements of the view model.</typeparam>
+        </member>
+    </members>
+</doc>

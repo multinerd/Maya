@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Maya.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Maya.EntityFramework.Domain.Amazon.S3.S3FileBaseModel">
+            <summary> 
+            S3FileBase model class.
+            </summary>
+        </member>
+        <member name="P:Maya.EntityFramework.Domain.Amazon.S3.S3FileBaseModel.Id">
+            <summary>
+            Gets or sets the Id property
+            </summary>
+        </member>
+        <member name="P:Maya.EntityFramework.Domain.Amazon.S3.S3FileBaseModel.Filename">
+            <summary>
+            Gets or sets the Filename property
+            </summary>
+        </member>
+        <member name="P:Maya.EntityFramework.Domain.Amazon.S3.S3FileBaseModel.S3Key">
+            <summary>
+            Gets or sets the S3Key property
+            </summary>
+        </member>
+        <member name="P:Maya.EntityFramework.Domain.Amazon.S3.S3FileBaseModel.S3Url">
+            <summary>
+            Gets or sets the S3URL property
+            </summary>
+        </member>
+    </members>
+</doc>

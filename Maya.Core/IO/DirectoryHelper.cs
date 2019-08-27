@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
-namespace Maya.System
+namespace Maya.Core.IO
 {
     /// <summary>
     /// 
@@ -37,8 +34,8 @@ namespace Maya.System
         /// <summary> Get the directory's base path. </summary>
         public string BasePath { get; private set; }                    // C:/Temp
 
-        ///// <summary> Get the directory's full path. </summary>
-        //public string FullPath => Path.Combine(BasePath, FolderName);   // C:/Temp/My Folder
+        /// <summary> Get the directory's full path. </summary>
+        public string FullPath => Path.Combine(BasePath, FolderName);   // C:/Temp/My Folder
 
         /// <summary> Create a Directory to act as the applications temp folder. </summary>
         /// <param name="folderName">The folder name to use.</param>
@@ -50,7 +47,7 @@ namespace Maya.System
             BasePath = Path.Combine(basePath ?? Path.GetTempPath(), FolderName);
 
             if (createIfNeeded)
-                Directory.CreateDirectory(BasePath);
+                Directory.CreateDirectory(FullPath);
         }
 
         /// <summary>
@@ -60,7 +57,7 @@ namespace Maya.System
         /// <returns></returns>
         public string GetPathFor(string path)                  // C:/Temp/My Folder/{path}
         {
-            return Path.Combine(BasePath, path);
+            return Path.Combine(FullPath, path);
         }
 
 
@@ -129,13 +126,13 @@ namespace Maya.System
         /// </summary>
         public void Clean()
         {
-            var di = new DirectoryInfo(BasePath);
+            var di = new DirectoryInfo(FullPath);
             foreach (var file in di.EnumerateFiles()) file.Delete();
             foreach (var subDirectory in di.EnumerateDirectories()) subDirectory.Delete(true);
         }
 
 
-
+#if !NETSTANDARD2_0
         public static bool IsDirectoryVisible(string path)
         {
             try
@@ -146,6 +143,7 @@ namespace Maya.System
             catch (UnauthorizedAccessException) { return true; }
             catch { return false; }
         }
+#endif
 
 
     }
