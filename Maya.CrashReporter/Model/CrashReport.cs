@@ -140,12 +140,7 @@ namespace Maya.CrashReporter.Model
         internal string ScreenShot;
 
 
-
-        /// <summary>
-        /// Sends exception report directly to receiver email address provided in ToEmail.
-        /// </summary>
-        /// <param name="exception">Exception object that contains details of the exception.</param>
-        public void Send(Exception exception)
+        private void ProcessException(Exception exception)
         {
             Exception = exception;
 
@@ -188,6 +183,15 @@ namespace Maya.CrashReporter.Model
             {
                 Debug.Write(e.Message);
             }
+        }
+
+        /// <summary>
+        /// Sends exception report directly to receiver email address provided in ToEmail.
+        /// </summary>
+        /// <param name="exception">Exception object that contains details of the exception.</param>
+        public void Send(Exception exception)
+        {
+            ProcessException(exception);
 
             // Present Dialog
             CrashReporter.CrashReport crashReport = new CrashReporter.CrashReport(this);
@@ -203,6 +207,18 @@ namespace Maya.CrashReporter.Model
             {
                 crashReport.ShowDialog();
             }
+        }
+
+        /// <summary>
+        /// Sends exception report directly to receiver email address provided in ToEmail.
+        /// </summary>
+        /// <param name="exception">Exception object that contains details of the exception.</param>
+        public void SendQuietly(Exception exception)
+        {
+            ProcessException(exception);
+
+            CrashReporter.CrashReport crashReport = new CrashReporter.CrashReport(this);
+            crashReport.SendEmail();
         }
 
     }
